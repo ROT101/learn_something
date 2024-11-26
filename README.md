@@ -1,3 +1,4 @@
 # ai_an_me
-searching_learning_programming to help cybersecurity research
+searching_learning_scripting 
+to help cybersecurity research
 
