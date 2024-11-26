@@ -1,4 +1,4 @@
-# ai_an_me
+# ai_and_me
 searching_learning_scripting 
 to help cybersecurity research
 
