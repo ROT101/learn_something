@@ -1,2 +1,8 @@
-# ai_an_me
-searching_learning_programming 
+# something_like_this
+searching 
+learning 
+attempting 
+failing 
+testing 
+analyzing
+
