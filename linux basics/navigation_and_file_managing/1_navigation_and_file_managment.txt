@@ -1,0 +1,17 @@
+cd - Change Directory
+    :
+pwd - Print Working Directory
+    :
+ls - List 
+    :
+
+mkdir - Make a Directory
+    :
+
+rm - Remove a File or Directory
+    :
+
+cp - Copy a File or Directory
+    :
+    
+mv - Move or Rename a File or Directory
