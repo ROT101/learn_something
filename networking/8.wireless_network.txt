@@ -1,0 +1,4 @@
+Wireless networks use radio waves to connect devices without physical cables. Key technologies include:
+
+    Wi-Fi: A popular standard for wireless local area networks.
+    Bluetooth: A short-range technology for connecting devices.

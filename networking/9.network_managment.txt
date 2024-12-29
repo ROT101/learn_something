@@ -1,0 +1,6 @@
+Managing a network involves monitoring performance, troubleshooting issues, and ensuring security.
+Network Monitoring Software
+: Tools that track network performance and detect issues.
+
+Configuration Management
+: Keeping track of network device configurations and changes.
