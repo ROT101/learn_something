@@ -1,0 +1,13 @@
+Protocols are rules that determine how data is transmitted over a network.
+
+
+Transmission Control Protocol (TCP)
+    : Ensures reliable transmission of data.
+    
+Internet Protocol (IP)
+    : Responsible for addressing and routing packets of data.
+
+Hypertext Transfer Protocol (HTTP)
+: Used for transferring web pages.
+
+File Transfer Protocol (FTP): Used for transferring files between computers.
