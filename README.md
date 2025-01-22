@@ -1,7 +1,8 @@
 # something_like_this
-searching 
-learning 
-attempting 
+linux basics
+
+network basics
+
 failing 
 testing 
 analyzing
