@@ -1,6 +1,6 @@
 # something_like_this
 
-!!NB
+!!NB\n
 with most command line tools you will come across FLAGS and ARGUMENTS.
 
 FLAGS -- AKA:keywords.
@@ -11,7 +11,7 @@ ARGUMENTS -- AKA:required input.
     
 To learn more about FLAGS and ARGUMENTS, use the {man} progam + progarm you wish to use , program you wish to use + {-h/--help} flag , program you wish to us without any commands search for it online.
 
-there are some command line tools that only accept arguments.
+there are some command line tools that only accept arguments.\n
 !!
 
 linux basics
