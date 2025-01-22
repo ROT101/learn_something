@@ -1,7 +1,8 @@
 # something_like_this
 
 !!NB
-with most command line tools you will come across FLAGS and ARGUMENTS
+with most command line tools you will come across FLAGS and ARGUMENTS.
+
 FLAGS -- AKA:keywords.
     they tell the progam what function or action you want to perform .
     
