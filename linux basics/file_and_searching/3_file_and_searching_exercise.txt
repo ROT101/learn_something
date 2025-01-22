@@ -1,8 +1,0 @@
-
-echo outputs text to the screen. You can use it to create a new file with some content.
-
-cat displays the contents of a file.
-
-grep searches for patterns in files. You can use grep -i for case-insensitive searches.
-
-nano is a simple text editor that allows you to edit files interactively.
