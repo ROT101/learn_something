@@ -1,20 +1,19 @@
-**cd - Change Directory**
-    :
+## cd 
+    : chnages to the given directory/folder
 
-**pwd - Print Working Directory**
+## pwd
     :prints the current directory you are in
 
-**ls - List** 
+## ls 
     : list files and directories
 
-**mkdir - Make a Directory**
+## mkdir 
     :creates a directory
 
-**rm - Remove** 
+## rm  
     :Remove a File or Directory
-
-**cp - Copy** 
+## cp 
     :Copy a File or Directory
     
-**mv - Move**
+## mv 
     :Move or Rename a File or Directory
