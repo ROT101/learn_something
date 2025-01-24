@@ -1,4 +1,4 @@
-**useradd - Add user**/  
+**useradd - Add user** 
   : create a new user 
 
 **groupadd - Add a new group**/
