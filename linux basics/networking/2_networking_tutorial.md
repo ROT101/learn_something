@@ -1,4 +1,4 @@
-'''bash
+```bash
 #test connectivity 
 ping localhost
 
@@ -16,4 +16,4 @@ wget https://github.com/manjunath5496/Networking-Books.git
 
 # Display network statistics
 netstat -an
-'''
+```
