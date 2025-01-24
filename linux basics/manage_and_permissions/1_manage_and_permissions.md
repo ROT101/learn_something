@@ -1,7 +1,7 @@
 **useradd - Add user** 
   : create a new user 
 
-**groupadd - Add a new group**/
+**groupadd - Add a new group**/ 
   : create a new usser
 
 **usermod - Modify user**/
