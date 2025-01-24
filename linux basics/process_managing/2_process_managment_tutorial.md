@@ -1,4 +1,4 @@
-'''bash
+```bash
 # Start a new process in the background
 sleep 1000 &
 
@@ -22,4 +22,4 @@ fg
 
 # Display a list of background jobs
 jobs
-'''
+```
