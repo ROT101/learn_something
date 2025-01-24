@@ -1,4 +1,4 @@
-'''bash
+```bash
 # Display system information
 uname -a
 
@@ -16,4 +16,4 @@ df -h
 
 # Display disk usage of a directory
 du -sh /path/to/directory
-'''
+```
