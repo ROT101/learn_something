@@ -2,16 +2,16 @@
 ## echo 
     : print text to the screen
 
-## cat - Concatenate 
+## cat 
     : prints the content of files 
 
 ## grep 
     : grabs/Searches for patterns in files
 
-## nano - text editor
+## nano 
     : a text editor that runs in bash 
 
-## bash - born again shell
+## bash 
     : scripting language that runs in the linux terminal
 
     
