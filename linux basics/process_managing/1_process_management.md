@@ -1,18 +1,17 @@
-**ps - process** 
+## ps
     : displays process information
     
-**kill - ...**
+## kill 
     : terminates a specific process
 
-**killall - ...**
+## killall 
     : termante multiple processes by name 
 
-**bg - background**
+## bg 
     : runs processes in the background
-
-**fg - foreground** 
+## fg
     : bring a background process to the foreground
 
-**jobs -...**
+## jobs 
     : displays the processes runnig in the background
     
