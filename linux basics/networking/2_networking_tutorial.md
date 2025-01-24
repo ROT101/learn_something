@@ -12,7 +12,7 @@ netcat -l -p 12345
 netcat localhost 12345 
 
 # Download a file from the internet
-wget https://github.com/manjunath5496/Networking-Books.git
+wget 
 
 # Display network statistics
 netstat -an
