@@ -7,11 +7,11 @@
 ## usermod
   : make changes to an existing user 
 
-## userdel 
+## userdel
   : remove a user 
 
-## chmod 
+## chmod
   : change a files permissions
    
-## chown 
+## chown
   : tarnsfer owner ship of a file
