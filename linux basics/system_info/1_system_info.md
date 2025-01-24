@@ -1,11 +1,11 @@
 ## uname 
-    : displays kernel and host name,hardware name , 
+    : displays kernel and host name,hardware name  
     
 ## hostname 
     : Display the system hostname
 
 ## uptime 
-    : displays how long the system has been running .
+    : displays how long the system has been running 
 
 ## free 
     : display system memory and disk usage
@@ -14,4 +14,4 @@
     : display disk usage
 
 ## du 
-    : displays available space and disk usage of a directory.
+    : displays available space and disk usage of a directory
