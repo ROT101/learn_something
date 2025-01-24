@@ -1,4 +1,4 @@
-## uname - unix name
+## uname 
     : displays kernel and host name,hardware name , 
     
 ## hostname 
@@ -10,7 +10,7 @@
 ## free 
     : display system memory and disk usage
 
-## df - disk free
+## df 
     : display disk usage
 
 ## du 
