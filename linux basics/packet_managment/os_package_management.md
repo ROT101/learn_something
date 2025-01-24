@@ -1,17 +1,17 @@
-apt - 
+## apt 
     :Package manager for Debian-based systems
 
-yum - 
+## yum 
     :Package manager for RPM-based systems
 
-pip - 
+## pip 
     :Package manager for Python packages
 
-dpkg - 
+## dpkg
     :Package manager for Debian-based systems
 
-rpm -
+## rpm 
     :Package manager for RPM-based systems
 
-gem - 
+## gem  
     :Package manager for ruby packages
