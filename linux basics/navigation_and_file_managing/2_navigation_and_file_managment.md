@@ -1,4 +1,4 @@
-'''bash
+```bash
 # Create a new directory called "my_files"
 mkdir my_files
 
@@ -19,4 +19,4 @@ rm example.txt
 
 # Go back to the original directory
 cd ..
-'''
+```
