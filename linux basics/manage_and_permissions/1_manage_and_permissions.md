@@ -13,5 +13,5 @@
 ## chmod
     : change a files permissions
    
-## Schown
+## chown
     : tarnsfer owner ship of a file
