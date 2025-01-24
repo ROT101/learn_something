@@ -10,7 +10,7 @@ pip -
 dpkg - 
     :Package manager for Debian-based systems
 
-rpm -  
+rpm -
     :Package manager for RPM-based systems
 
 gem - 
