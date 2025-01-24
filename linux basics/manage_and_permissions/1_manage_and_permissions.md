@@ -1,17 +1,17 @@
-## useradd
+##useradd
   : create a new user
 
-## groupadd
+##groupadd
   : create a new us
 
-## usermod
+##usermod
   : make changes to an existing user
 
-## userdel
+##userdel
   : remove a user
 
-## chmod
+##chmod
   : change a files permissions
    
-## chown
+##Schown
   : tarnsfer owner ship of a file
