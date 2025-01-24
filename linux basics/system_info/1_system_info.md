@@ -1,13 +1,13 @@
 ## uname - unix name
     : displays kernel and host name,hardware name , 
     
-## hostname - ...
+## hostname 
     : Display the system hostname
 
-# uptime -...
+## uptime 
     : displays how long the system has been running .
 
-## free -...
+## free 
     : display system memory and disk usage
 
 ## df - disk free
