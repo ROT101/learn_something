@@ -2,7 +2,7 @@
 
 
 
- [linux basics](https://github.com/ROT101/learn_something/tree/main/linux%20basics#readme)
+ [network fundementals](https://github.com/ROT101/learn_something/blob/main/networking/1.what_is_a_network.md)
 
 
 
