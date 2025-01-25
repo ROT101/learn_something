@@ -1,6 +1,5 @@
 
-## echo 
-    : print text to the screen
+## echo **: print text to the screen**
 
 ## cat 
     : prints the content of files 
