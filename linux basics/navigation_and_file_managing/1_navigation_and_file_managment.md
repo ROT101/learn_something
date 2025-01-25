@@ -21,4 +21,4 @@
 ## :Move or Rename a File or Directory
     mv name_of_file destination_path_and_name_for_file
 
-**try some [examples](https://github.com/ROT101/learn_something/blob/main/linux%20basics/navigation_and_file_managing/2_navigation_and_file_managment.md) before doing heading to the exercises**
+**tryout some [examples](https://github.com/ROT101/learn_something/blob/main/linux%20basics/navigation_and_file_managing/2_navigation_and_file_managment.md) before heading to the exercises**
