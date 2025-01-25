@@ -2,7 +2,7 @@
 
 
 
- [linux basics](linux basics)
+ [linux basics](https://github.com/ROT101/learn_something/tree/main/linux%20basics)
 
 
 
