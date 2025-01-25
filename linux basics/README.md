@@ -13,4 +13,4 @@ there are some command line tools that only accept arguments.
 
 # man
 ## : display manuals for command line tools
-    man man
+    man command_line_tool_name
