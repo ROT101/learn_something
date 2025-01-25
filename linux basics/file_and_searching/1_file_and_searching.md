@@ -1,5 +1,6 @@
 
-# echo \ **: prints text to the screen**
+# echo 
+##: prints text to the screen
     echo "write something in here"
 # cat *: prints the content of files*
     cat some_file_to_read.file
