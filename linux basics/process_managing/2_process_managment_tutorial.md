@@ -1,6 +1,4 @@
 ```bash
-# Start a new process in the background
-sleep 1000 &
 
 # Display the process information
 ps -ef
