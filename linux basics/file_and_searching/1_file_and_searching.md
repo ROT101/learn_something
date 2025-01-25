@@ -1,8 +1,8 @@
 
-## echo **: print text to the screen**
+# echo **: print text to the screen**
+    echo "write something in here"
 
-## cat 
-    : prints the content of files 
+# cat **: prints the content of files* 
 
 ## grep 
     : grabs/Searches for patterns in files
