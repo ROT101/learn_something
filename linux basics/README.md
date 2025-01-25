@@ -14,3 +14,8 @@ there are some command line tools that only accept arguments.
 # man
 ## : display manuals for command line tools
     man command_line_tool_name
+
+## open a terminal and type the command:
+    man man
+**once you've read through the man manual you are read to proceed**
+[navigation and file management](https://github.com/ROT101/learn_something/blob/main/linux%20basics/navigation_and_file_managing/1_navigation_and_file_managment.md)
