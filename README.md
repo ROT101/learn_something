@@ -2,9 +2,9 @@
 
 
 
-linux basics
+ [linux basics](linux basics)
 
-network basics
+
 
 failing 
 testing 
