@@ -1,4 +1,4 @@
-#!/bin/env bash
+```bash
 # Create a new directory called "my_files"
 mkdir my_files
 
@@ -16,6 +16,6 @@ mv example.txt ~/Downloads/
 
 # Remove the original file
 rm example.txt
-
+```
 # Go back to the original directory
 cd ..
