@@ -6,7 +6,3 @@
 
 
 
-failing 
-testing 
-analyzing
-
