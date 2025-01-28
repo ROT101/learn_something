@@ -21,3 +21,4 @@
 ## : displays the processes runnig in the background
     jobs
     
+[examples](https://github.com/ROT101/learn_something/blob/main/linux%20basics/process_managing/2_process_managment_tutorial.md)
