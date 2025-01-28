@@ -1,6 +1,6 @@
-- Test network connectivity to a remote server using ping.
+- Test network connectivity using ping.
 
-- Securely connect to a remote server using ssh.
+- Securely connect to user:krypton.labs.overthewire.org port:2231 using ssh. 
 
 - Download a file from the internet using wget.
 
