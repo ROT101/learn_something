@@ -16,3 +16,5 @@
 # chown
 ## : tarnsfer owner ship of a file
     chown 
+-----------------------------------------------
+[example](https://github.com/ROT101/learn_something/blob/main/linux%20basics/manage_and_permissions/2_manage_and_permissions_tutorial.md)
