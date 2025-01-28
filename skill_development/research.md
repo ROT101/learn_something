@@ -23,5 +23,5 @@
         - Example Usage: **intext:"cyber threat"**
 
 see [cheat sheet](https://www.compass-security.com/fileadmin/Research/White_Papers/2017-01_osint_cheat_sheet.pdf) for more operators.
-
+----------------------------------------------------------------------------------------
 [programming](https://github.com/ROT101/learn_something/blob/main/skill_development/programming.md)
