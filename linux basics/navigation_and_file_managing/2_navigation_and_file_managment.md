@@ -20,4 +20,5 @@ rm example.txt
 # Go back to the original directory
 cd ..
 ```
+--------------------------------------------------
 [exercises](https://github.com/ROT101/learn_something/blob/main/linux%20basics/navigation_and_file_managing/3_navigation_and_file_managment_exercise.md)
