@@ -16,3 +16,5 @@ sed -i 's/World/Universe/g' example.txt
 nano example.txt
 
 ```
+
+[exercise](https://github.com/ROT101/learn_something/blob/main/linux%20basics/file_and_searching/3_file_and_searching_exercise.md)
