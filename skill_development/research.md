@@ -2,24 +2,24 @@
 
 # Common Google Dorking Operators
 
-**Use Case: Searching Within a Specific Website** 
+### Use Case: Searching Within a Specific Website
 - Operator: `site:` \
-        - Example Usage: site:nytimes.com cybersecurity
+        - Example Usage: **site: nytimes.com cybersecurity**
 
-**UseCase: Finding Specific File Types** 
+### UseCase: Finding Specific File Types
 - Operator: `filetype:` \
-        - Example Usage: filetype:pdf machine learning
+        - Example Usage: **filetype: pdf machine learning**
 
-**Use Case: Searching for Pages with Specific Titles** 
+### Use Case: Searching for Pages with Specific Titles*
 - Operator: `intitle:` \
-        - Example Usage: intitle:"data privacy"
+        - Example Usage: intitle: "data privacy"
 
-**Use Case: Finding Pages that Link to a Specific URL** 
+### Use Case: Finding Pages that Link to a Specific URL
 - Operator: `link:` \
-        - Example Usage: link:bbc.co.uk/news/technology-57339947
+        - Example Usage: **link: bbc.co.uk/news/technology-57339947**
 
-**Use Case: Searching for Specific Text on a Web Page** 
+### Use Case: Searching for Specific Text on a Web Page
 - Operator: `intext:` \
-        - Example Usage: intext:"cyber threat"
+        - Example Usage: **intext:"cyber threat"**
 
 [cheat sheet](https://www.compass-security.com/fileadmin/Research/White_Papers/2017-01_osint_cheat_sheet.pdf)
