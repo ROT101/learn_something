@@ -18,4 +18,4 @@ wget
 netstat -an
 ```
 
-[example](https://github.com/ROT101/learn_something/blob/main/linux%20basics/networking/3_networking_exercise.md)
+[exercise](https://github.com/ROT101/learn_something/blob/main/linux%20basics/networking/3_networking_exercise.md)
