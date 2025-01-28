@@ -15,5 +15,5 @@
 
 ## du 
     : displays available space and disk usage of a directory
-
+--------------------------------------------
 [examples](https://github.com/ROT101/learn_something/blob/main/linux%20basics/system_info/2_system_info_tutorial.md)
