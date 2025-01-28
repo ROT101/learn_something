@@ -12,7 +12,7 @@
 ## : a text editor that runs in bash 
     nano some_file_to_open.extention
 # bash 
-## : scripting language that runs in the linux terminal
+## : [scripting language](https://www.learnshell.org/) that runs in the linux terminal
     some bash_file_to_run.sh
 
 [examples](https://github.com/ROT101/learn_something/blob/main/linux%20basics/file_and_searching/2_file_and_searching_tutorial.md)
