@@ -7,4 +7,6 @@ To learn syntax choose a language and go for it . if you not sure where to start
 - [w3schools](https://www.w3schools.com/)
 - [freecodecamp](https://www.freecodecamp.org/)
 - [exercism](https://exercism.org/)
+
+  [tool guide](https://github.com/ROT101/learn_something/blob/main/skill_development/tool_guide.md)
  
