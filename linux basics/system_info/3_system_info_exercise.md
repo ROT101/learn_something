@@ -9,3 +9,5 @@
 - Display disk usage using df.
 
 - Display disk usage of a directory using du.
+
+  [networking](https://github.com/ROT101/learn_something/blob/main/linux%20basics/networking/1_network.md)
