@@ -1,104 +1,68 @@
 here are some tools you can do some research on and experiment with .
-# recon
+# RECON TOOLS
 
-## whois
+- whois
+- whatweb 
+- dig 
+- nslookup 
+- netdiscover
+- dnsrecon
+- nmap
+- theharvester
+- spiderfoot
+- masscan
 
-## whatweb 
+# NETWORK TOOLS
 
-## dig 
-
-## nslookup 
-
-## netdiscover
-
-## dnsrecon
-
-## nmap
-
-## theharvester
-
-## spiderfoot
-
-## masscan
-
-# network
-
-## arpspoof
-
-## dsniff
-
-## ettercap 
-
-## hping
-
-## yersinia
-
-## netcat
+- arpspoof
+- dsniff
+- ettercap 
+- hping
+- yersinia
+- netcat
 
 
 
-# wireless tools
+# WIRELESS TOOLS
 
-## wifite
+- wifite
+- reaver
+- aircrack-ng
+- airgeddon
+- pixieWPS
 
-## reaver
-
-## aircrack-ng
-
-## airgeddon
-
-## pixieWPS
-
-# web app testing
+# WEB APP TESTING
  
-## burpsuite
+- burpsuite
+- oswap zap
+- wfuzz
+- dirb 
+- gobuster
 
-## oswap zap
+# VULN SCAN 
 
-## wfuzz
+- nikto
+- nessus
+- openvas
+- w3af
 
-## dirb 
+# EXPLOITATION
 
-## gobuster
+- metasploit
+- armatage
+- exploit db
+- sqlmap
+- searchsploit
 
-# vuln scan 
+# PASSWORD/BRUTEFORCE TOOLS 
 
-## nikto
+- hashcat
+- john the ripper
+- hydra 
+- medusa 
+- ophcrack
+- kraken
+- crunch
+- rainbowcrack
 
-## nessus
-
-## openvas
-
-## w3af
-
-# exploitation
-
-## metasploit
-
-## armatage
-
-## exploit db
-
-## sqlmap
-
-## searchsploit
-
-# password attacks
-
-## hashcat
-
-## john the ripper
-
-## hydra 
-
-## medusa 
-
-## ophcrack
-
-## kraken
-
-## crunch
-
-## rainbowcrack
-
-# 
+ 
