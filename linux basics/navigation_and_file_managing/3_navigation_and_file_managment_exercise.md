@@ -8,3 +8,5 @@
 - Move the original file to a new location, such as the "Downloads" directory.
 
 - Remove the original file.
+
+  [file/searching](https://github.com/ROT101/learn_something/blob/main/linux%20basics/file_and_searching/1_file_and_searching.md)
