@@ -21,3 +21,5 @@ fg
 # Display a list of background jobs
 jobs
 ```
+
+[exercise](https://github.com/ROT101/learn_something/blob/main/linux%20basics/process_managing/3_process_managment_exercise.md)
