@@ -17,5 +17,5 @@ wget
 # Display network statistics
 netstat -an
 ```
-
+-----------------------------------------------
 [exercise](https://github.com/ROT101/learn_something/blob/main/linux%20basics/networking/3_networking_exercise.md)
