@@ -18,4 +18,4 @@
 ## : allows for a secure connection to a remote server or device
     ssh user
     
-[example](https://github.com/ROT101/learn_something/blob/main/linux%20basics/networking/2_network.md)
+[example](https://github.com/ROT101/learn_something/blob/main/linux%20basics/networking/2_networking_tutorial.md)
