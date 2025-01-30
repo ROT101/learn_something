@@ -12,7 +12,7 @@
     mkdir name_of_new_directory
 # rm  
 ## :Remove a File or Directory
-    rm name_of_file_to delete
+    rm name_of_file_to_delete
 
 # cp 
 ## :Copy a File or Directory
