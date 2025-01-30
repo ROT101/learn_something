@@ -1,5 +1,5 @@
 # pwd
-## :prints the current directory you are in
+## : prints the current directory you are in
     pwd
 # cd 
 ## : chnages to the given directory/folder
