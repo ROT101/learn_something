@@ -2,7 +2,7 @@
 ## : prints the current directory you are in
     pwd
 # cd 
-## : chnages to the given directory/folder
+## : goes to the given directory/folder
     cd directory_path_to_go_to
 # ls 
 ## : list files and directories
