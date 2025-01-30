@@ -7,7 +7,7 @@
     cat some_file_to_read.extention
 # grep 
 ## : grabs/Searches for patterns in files
-    grep "the key words, letters,numbers or symboles"
+    grep "the key words, letters,numbers or symbols"
 # nano 
 ## : a text editor that runs in bash 
     nano some_file_to_open.extention
