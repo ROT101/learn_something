@@ -12,7 +12,7 @@ netcat -l -p 12345
 netcat localhost 12345 
 
 # Download a file from the internet
-wget 
+wget https://thevirtualmonkey.files.wordpress.com/2014/02/tcp_ip.jpg
 
 # Display network statistics
 netstat -an
