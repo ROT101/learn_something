@@ -1,6 +1,6 @@
 - Test network connectivity using ping.
 
-- Securely connect to user:krypton.labs.overthewire.org port:2231 using ssh. password:KRYPTONISGREAT
+- Securely connect to [user: krypton.labs.overthewire.org] [port: 2231] using ssh. password:KRYPTONISGREAT
 
 - Download a file from the internet using wget.
 
