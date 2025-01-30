@@ -2,7 +2,7 @@
 # Create a new directory called "my_files"
 mkdir my_files
 
-# Change into the new directory
+# move into the new directory
 cd my_files
 
 # Create a new file called "example.txt"
