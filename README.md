@@ -1,4 +1,4 @@
-# YOU HERE SO LEARN SOMETHING 
+# LEARN SOMETHING 
 
 
 **take your first steps in the world of cybersecurity** \
