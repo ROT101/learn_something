@@ -17,5 +17,5 @@ there are some command line tools that only accept arguments.
 
 ## open a terminal and type the command:
     man man
-**once you've read through the man manual you are read to proceed**
+**once you've read through the man manual you are ready to proceed**
 [navigation and file management](https://github.com/ROT101/learn_something/blob/main/linux%20basics/navigation_and_file_managing/1_navigation_and_file_managment.md)
