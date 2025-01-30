@@ -11,4 +11,6 @@ follow the link to install virtualbox on [linux](https://www.geeksforgeeks.org/h
 follow the link to install virtualbox on [windows](https://ultahost.com/knowledge-base/install-virtualbox-windows/)
 
 
+# scripting projects 
+[bash](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
 
