@@ -8,5 +8,7 @@
 
 follow the link to install virtualbox on [linux](https://www.geeksforgeeks.org/how-to-install-virtualbox-in-linux/)
 
+follow the link to install virtualbox on [windows](https://ultahost.com/knowledge-base/install-virtualbox-windows/)
+
 
 
