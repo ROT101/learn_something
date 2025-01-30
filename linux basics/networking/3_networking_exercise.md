@@ -6,4 +6,4 @@
 
 - Display network statistics using netstat
 ------------------------------------------------
-[reaserch techniques](https://github.com/ROT101/learn_something/blob/main/skill_development/research.md)
+[research techniques](https://github.com/ROT101/learn_something/blob/main/skill_development/research.md)
