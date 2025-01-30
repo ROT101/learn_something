@@ -2,7 +2,7 @@
 
 
 **take your first steps in the world of cybersecurity** \
- start here: [network fundementals](https://github.com/ROT101/learn_something/blob/main/networking/1.what_is_a_network.md) for a step by step path
+ start here: [network introduction](https://github.com/ROT101/learn_something/blob/main/networking/1.what_is_a_network.md) for a step by step path
 
  # virtuabox installation
 
