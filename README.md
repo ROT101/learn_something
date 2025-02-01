@@ -1,5 +1,8 @@
 # LEARN SOMETHING 
 
+## virtualbox 
+:**VirtualBox
+is a hosted hypervisor for x86 virtualization developed by Oracle Corporation. It allows users to create and run virtual machines on their computers, enabling them to install and run multiple operating systems simultaneously**
 
 **take your first steps in the world of cybersecurity** \
  start here: [network introduction](https://github.com/ROT101/learn_something/blob/main/networking/1.what_is_a_network.md) for a step by step path
