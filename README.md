@@ -1,7 +1,7 @@
 # LEARN SOMETHING 
 
 ## virtualbox 
-:**VirtualBox
+**VirtualBox
 is a hosted hypervisor for x86 virtualization developed by Oracle Corporation. It allows users to create and run virtual machines on their computers, enabling them to install and run multiple operating systems simultaneously**
 
 **take your first steps in the world of cybersecurity** \
