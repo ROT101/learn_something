@@ -2,38 +2,47 @@
 require 'base64'
 require 'optparse'
 
+# sting to hex
 def to_hex(string)
     string.unpack1('H*')
 end
 
+# sting to octal
 def to_octal(string) 
     string.each_byte.map {|byte| sprintf('%o', byte)}.join(" ")
 end
 
+# sting to base64
 def to_base64(string)
     Base64.encode64(string)
 end
 
+# sting to decimal
 def to_decimal(string)
     string.each_byte.map {|byte| byte.ord}.join(" ")
 end
 
+# hex to string
 def from_hex(string)
     [string].pack('H*')
 end
 
+# octal to string
 def from_octal(string)
     string.split.map { |oct| oct.to_i(8).chr }.join
 end
 
+# base64 to string
 def from_base64(string)
     Base64.decode64(string)
 end
 
+# decimal to string
 def from_decimal(string)
     string.split.map { |dec| dec.to_i.chr }.join
 end
 
+# get user arguements
 options = {}
 opt = OptionParser.new do |parser|
     parser.banner = "Usage: example.rb [options]"
