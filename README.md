@@ -17,5 +17,6 @@ follow the link to install virtualbox on [windows](https://ultahost.com/knowledg
 
 # scripting projects 
 [bash](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
+
 [ruby](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
 
