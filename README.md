@@ -31,6 +31,8 @@ follow the link to install virtualbox on [windows](https://ultahost.com/knowledg
 alternative 
 - [github page](https://github.com/juice-shop/juice-shop?tab=readme-ov-file#setup)
 - [documentation](https://pwning.owasp-juice.shop/companion-guide/latest/part1/running.html)
+- [youtube 1](https://www.youtube.com/watch?v=tvNKp1QXV_8)
+- [youtube 2](https://www.youtube.com/watch?v=tvNKp1QXV_8)
 
 # scripting projects 
 [bash](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
