@@ -27,6 +27,7 @@ follow the link to install virtualbox on [windows](https://ultahost.com/knowledg
     cd juice-shop 
     npm install
     npm start
+    firfox http://localhost:3000
 
 # scripting projects 
 [bash](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
