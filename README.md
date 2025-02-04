@@ -16,9 +16,13 @@ follow the link to install virtualbox on [windows](https://ultahost.com/knowledg
 
 ## VMs 
 **Virtual machines are software computers that provide the same functionality as physical computers**
+
+[kali installation docs](https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/)
 [kali linux vm](https://www.kali.org/get-kali/#kali-virtual-machines)
 
+[parrot os isntallation doc](https://parrotsec.org/docs/virtualization/install-parrot-on-virtualbox)
 [parrot os vm](https://www.parrotsec.org/download/)
+
 
 # juice shop
 **An insecure web application designed for security training, awareness demonstrations, and penetration testing. The application contains numerous hacking challenges that involve exploiting vulnerabilities, which are intentionally planted to simulate real-world security issues It is written in Node.js, Express, and Angular.**
