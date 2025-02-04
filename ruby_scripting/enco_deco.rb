@@ -2,22 +2,22 @@
 require 'base64'
 require 'optparse'
 
-# sting to hex
+# string to hex
 def to_hex(string)
-    string.unpack1('H*')
+    string.unpack1('H*') 
 end
 
-# sting to octal
+# string to octal
 def to_octal(string) 
     string.each_byte.map {|byte| sprintf('%o', byte)}.join(" ")
 end
 
-# sting to base64
+# string to base64
 def to_base64(string)
     Base64.encode64(string)
 end
 
-# sting to decimal
+# string to decimal
 def to_decimal(string)
     string.each_byte.map {|byte| byte.ord}.join(" ")
 end
