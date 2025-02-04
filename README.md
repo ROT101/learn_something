@@ -14,6 +14,19 @@ follow the link to install virtualbox on [linux](https://www.geeksforgeeks.org/h
 
 follow the link to install virtualbox on [windows](https://ultahost.com/knowledge-base/install-virtualbox-windows/)
 
+## VMs 
+
+
+# juice shop
+**An insecure web application designed for security training, awareness demonstrations, and penetration testing. The application contains numerous hacking challenges that involve exploiting vulnerabilities, which are intentionally planted to simulate real-world security issues It is written in Node.js, Express, and Angular.**
+
+## juice shop setup 
+    sudo apt update
+    sudo apt install nodejs npm
+    git clone https://github.com/juice-shop/juice-shop.git
+    cd juice-shop 
+    npm install
+    npm start
 
 # scripting projects 
 [bash](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
