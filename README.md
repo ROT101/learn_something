@@ -28,6 +28,9 @@ follow the link to install virtualbox on [windows](https://ultahost.com/knowledg
     npm install
     npm start
     firfox http://localhost:3000
+alternative 
+- [github page](https://github.com/juice-shop/juice-shop?tab=readme-ov-file#setup)
+- [documentation](https://pwning.owasp-juice.shop/companion-guide/latest/part1/running.html)
 
 # scripting projects 
 [bash](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
