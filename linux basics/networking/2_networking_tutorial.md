@@ -3,7 +3,7 @@
 ping localhost
 
 # Securely connect to a remote server
-ssh bandit0@bandit.labs.overthewire.org -p 2220 #password is "bandits0" cntrl + c to exit
+ssh bandit0@bandit.labs.overthewire.org -p 2220 #password is "bandit0" cntrl + c to exit
 
 #listen for incoming connections 
 netcat -l -p 12345 
