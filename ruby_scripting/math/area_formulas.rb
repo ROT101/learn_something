@@ -1,8 +1,9 @@
-
+#!/bin/env ruby
+# area formulas
 module Area
 
     @pi = 3.14
-
+    
     def self.circle(r)
         return (@pi * r.pow(2))
     end
