@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # [read] is to accept input from user and [-p] is to display text for user to see during the process  
 
