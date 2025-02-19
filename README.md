@@ -50,3 +50,5 @@ alternative
 
 [ruby](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
 
+[python](https://github.com/ROT101/learn_something/tree/main/ai_py_script)
+
