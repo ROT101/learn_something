@@ -2,8 +2,9 @@
  
 
 
-**take your first steps in the world of cybersecurity** \
- start here: [network introduction](https://github.com/ROT101/learn_something/blob/main/networking/1.what_is_a_network.md) for a step by step path
+**Theory** \
+ [network basics](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) 
+ [linux basis](https://github.com/ROT101/learn_something/blob/main/occupytheweb_linux.md)
 
  # virtualbox installation
 
