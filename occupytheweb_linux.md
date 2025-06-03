@@ -76,20 +76,20 @@ Task:
     cat issue   # Display OS info  
     cd ~        # Return home  
 
-
 # Text Manipulation in Linux
-Objectives
+**Objectives**
 
-✔ Master command-line text processing tools (head, tail, grep, sed, less)
-✔ Learn to search, filter, and modify text files efficiently
-✔ Complete a Hacker Challenge to apply skills
-Lessons
+  Master command-line text processing tools (head, tail, grep, sed, less)
+  Learn to search, filter, and modify text files efficiently
+  Complete a Hacker Challenge to apply skills
+
+**Lessons**
 1. Viewing Files (head, tail, nl)
-Command	| Description	                | Example
+Command	| Description	                   | Example
 _______________________________________________________________________
-head	| Show first 10 lines of a file | head /var/log/syslog
-tail	| Show last 10 lines of a file	| tail -n 20 /var/log/auth.log
-nl	    | Display file with line numbers	    | nl /etc/passwd
+head	   | Show first 10 lines of a file  | head /var/log/syslog
+tail	   | Show last 10 lines of a file	  | tail -n 20 /var/log/auth.log
+nl	     | Display file with line numbers	| nl /etc/passwd
 ________________________________________________________________________
 
 🔹 Bonus:
@@ -110,10 +110,10 @@ ___________________________________________________________________
 ____________________________________________________________________
 
 🔹 Advanced:
-bash
+```bash
 
 grep -E "^(root|admin)" /etc/passwd  # Regex search
-
+```
 3. Replacing Text with sed
 
 sed edits text without opening files (stream editor).
@@ -125,10 +125,10 @@ sed '/pattern/d' file.txt  | Delete lines matching pattern
 _________________________________________________________________
 
 🔹 Example:
-bash
+```bash
 
 sed 's/foo/bar/g' example.txt  # Replace "foo" with "bar" globally
-
+```
 4. Navigation with more and less
 Tool | Description	                      | Commands
 ____________________________________________________________________
