@@ -9,12 +9,12 @@
 **Lessons**
 ## 1. Why Hackers Use Linux
 
- Open-source → Full control over the OS.
- Powerful CLI → Automate tasks, run hacking tools efficiently.
- Pre-installed tools → Kali Linux comes with 500+ penetration testing tools.
- Stability & Security → Less prone to malware than Windows.
+ Open-source: Full control over the OS.
+ Powerful CLI: Automate tasks, run hacking tools efficiently.
+ Pre-installed tools: Kali Linux comes with 500+ penetration testing tools.
+ Stability & Security: Less prone to malware than Windows.
  
-2. Installing VirtualBox & Kali Linux
+## 2. Installing VirtualBox & Kali Linux
 Step 1: Download VirtualBox
 
 🔗 https://www.virtualbox.org/
@@ -27,28 +27,32 @@ Step 3: Import Kali into VirtualBox
 
     Start the VM → Login (kali / kali).
 
-3. Linux Filesystem Overview
-Directory | Purpose
-____________________________________________________
-/	      | Root directory (everything starts here)
-/home	  | User personal files
-/etc	  | System configuration files
-/bin,     | /sbin	Essential command binaries
-/var	  | Log files, databases
-/usr	  | User programs & utilities
-______________________________________________________
-4. Basic Linux Commands
-Command | Description	          | Example
-__________________________________________________________
-pwd	    | Print current directory | pwd → /home/kali
-whoami	| Show current username	  | whoami → kali
-ls	    | List files/folders	  | ls -l (detailed list)
-cd	    | Change directory	      | cd /etc → Go to /etc
-mkdir	| Create directory	      | mkdir HackFolder
-cat	    | Display file content	  | cat /etc/passwd
-__________________________________________________________
+## 3. Linux Filesystem Overview
 
-Activities
+    Directory | Purpose
+    ____________________________________________________
+    /	      | Root directory (everything starts here)
+    /home	  | User personal files
+    /etc	  | System configuration files
+    /bin,     | /sbin	Essential command binaries
+    /var	  | Log files, databases
+    /usr	  | User programs & utilities
+    ______________________________________________________
+    
+## 4. Basic Linux Commands
+
+    Command | Description	          | Example
+    __________________________________________________________
+    pwd	    | Print current directory | pwd → /home/kali
+    whoami	| Show current username	  | whoami → kali
+    ls	    | List files/folders	  | ls -l (detailed list)
+    cd	    | Change directory	      | cd /etc → Go to /etc
+    mkdir	| Create directory	      | mkdir HackFolder
+    cat	    | Display file content	  | cat /etc/passwd
+    __________________________________________________________
+
+**Activities**
+
 1. Set Up Kali Linux in a Virtual Machine
 
 Task:
@@ -80,71 +84,72 @@ Task:
 
 # Text Manipulation in Linux
 **Objectives**
-
-  Master command-line text processing tools (head, tail, grep, sed, less)
-  Learn to search, filter, and modify text files efficiently
-  Complete a Hacker Challenge to apply skills
+- Master command-line text processing tools (head, tail, grep, sed, less)
+- Learn to search, filter, and modify text files efficiently
+- Complete a Hacker Challenge to apply skills
 
 **Lessons**
-1. Viewing Files (head, tail, nl)
-Command	| Description	                   | Example
-_______________________________________________________________________
-head	   | Show first 10 lines of a file  | head /var/log/syslog
-tail	   | Show last 10 lines of a file	  | tail -n 20 /var/log/auth.log
-nl	     | Display file with line numbers	| nl /etc/passwd
-________________________________________________________________________
+## 1. Viewing Files (head, tail, nl)
 
-🔹 Bonus:
+    Command	| Description	                   | Example
+    _______________________________________________________________________
+    head	   | Show first 10 lines of a file  | head /var/log/syslog
+    tail	   | Show last 10 lines of a file	  | tail -n 20 /var/log/auth.log
+    nl	     | Display file with line numbers	| nl /etc/passwd
+    ________________________________________________________________________
 
-    tail -f → Live tracking (great for logs).
+- Bonus:
 
-    head -n 5 → Show first 5 lines.
+      tail -f → Live tracking (great for logs).
+  
+      head -n 5 → Show first 5 lines.
 
-2. Searching with grep
+## 2. Searching with grep
 
-grep searches for patterns in files.
-Flag | Effect	                  | Example
-___________________________________________________________________
--i	  | Case-insensitive search  | grep -i "error" /var/log/syslog
--v	  | Invert match (exclude)	  | grep -v "192.168.1.1" access.log
--r	  | Recursive search	        | grep -r "password" /etc/
--A 2 | Show 2 lines after match	| grep -A 2 "failed" auth.log
-____________________________________________________________________
+grep searches for patterns in files:
 
-🔹 Advanced:
-```bash
+    Flag | Effect	                  | Example
+    ___________________________________________________________________
+    -i	  | Case-insensitive search  | grep -i "error" /var/log/syslog
+    -v	  | Invert match (exclude)	  | grep -v "192.168.1.1" access.log
+    -r	  | Recursive search	        | grep -r "password" /etc/
+    -A 2 | Show 2 lines after match	| grep -A 2 "failed" auth.log
+    ____________________________________________________________________
 
-grep -E "^(root|admin)" /etc/passwd  # Regex search
-```
-3. Replacing Text with sed
+Advanced:
 
-sed edits text without opening files (stream editor).
-Command	                   | Effect
-________________________________________________________________
-sed 's/old/new/' file.txt  | Replace first occurrence per line
-sed 's/old/new/g' file.txt | Replace all occurrences
-sed '/pattern/d' file.txt  | Delete lines matching pattern
-_________________________________________________________________
+      grep -E "^(root|admin)" /etc/passwd  # Regex search
 
-🔹 Example:
-```bash
+## 3. Replacing Text with sed
 
-sed 's/foo/bar/g' example.txt  # Replace "foo" with "bar" globally
-```
-4. Navigation with more and less
-Tool | Description	                      | Commands
-____________________________________________________________________
-more | Basic file viewer (forward-only)	  | space=next page, q=quit
-less | Advanced viewer (scroll both ways) | ↑/↓=scroll, /=search
-_____________________________________________________________________
+sed edits text without opening files (stream editor):
 
-🔹 Why less > more?
+    Command	                   | Effect
+    ________________________________________________________________
+    sed 's/old/new/' file.txt  | Replace first occurrence per line
+    sed 's/old/new/g' file.txt | Replace all occurrences
+    sed '/pattern/d' file.txt  | Delete lines matching pattern
+    _________________________________________________________________
 
-    Supports backward scrolling.
+Example:
 
-    Search with /pattern.
+    sed 's/foo/bar/g' example.txt  # Replace "foo" with "bar" globally
 
-Activities
+## 4. Navigation with more and less
+ 
+    Tool | Description	                      | Commands
+    ____________________________________________________________________
+    more | Basic file viewer (forward-only)	  | space=next page, q=quit
+    less | Advanced viewer (scroll both ways) | ↑/↓=scroll, /=search
+    _____________________________________________________________________
+
+- Why less > more?
+
+      Supports backward scrolling.
+  
+      Search with /pattern.
+
+**Activities**
 1. Hacker Challenge: Log Analysis
 
 Scenario:
@@ -157,79 +162,70 @@ You found a server log (access.log). Extract:
     Replace all instances of 192.168.1.100 with HACKED (sed).
 
 Solution:
-bash
 
-# 1. Find failed logins
-grep "failed" access.log
-
-# 2. Get last 5 lines
-tail -n 5 access.log
-
-# 3. Replace IP with "HACKED"
-sed 's/192.168.1.100/HACKED/g' access.log > modified.log
+    # 1. Find failed logins
+    grep "failed" access.log
+    
+    # 2. Get last 5 lines
+    tail -n 5 access.log
+    
+    # 3. Replace IP with "HACKED"
+    sed 's/192.168.1.100/HACKED/g' access.log > modified.log
 
 
 # Analyzing and Managing Networks
-Objectives
+**Objectives**
 
- Use network tools (ifconfig, ip, iwconfig) to analyze and modify network settings
- Understand IP addressing, DNS lookups, and MAC spoofing
- Assign a new IP address and spoof a MAC address
-Lessons
-1. Network Interface Tools
-ifconfig (Legacy) vs. ip (Modern)
-Command	 | Description                   | Example
-_________________________________________________________
-ifconfig | View/set network interfaces   | ifconfig eth0
-ip	      | More powerful replacement     | ip addr show
-iwconfig | Configure wireless interfaces | iwconfig wlan0
-__________________________________________________________
+ - Use network tools (ifconfig, ip, iwconfig) to analyze and modify network settings
+ - Understand IP addressing, DNS lookups, and MAC spoofing
+ - Assign a new IP address and spoof a MAC address
+   
+**Lessons**
 
-🔹 Key Uses:
+## 1. Network Interface Tools
+ifconfig (Legacy) vs. ip (Modern):
 
-    Check IP, MAC, and interface status.
+      Command	 | Description                   | Example
+      _________________________________________________________
+      ifconfig | View/set network interfaces   | ifconfig eth0
+      ip	      | More powerful replacement     | ip addr show
+      iwconfig | Configure wireless interfaces | iwconfig wlan0
+      __________________________________________________________
 
-    Enable/disable interfaces (sudo ifconfig eth0 up/down).
+- Key Uses:
+  
+      Check IP, MAC, and interface status.
+  
+      Enable/disable interfaces (sudo ifconfig eth0 up/down).
 
-2. DNS Tools (dig, nslookup)
-Command	 | Description          | Example
-_______________________________________________________
-dig	     | Advanced DNS queries | dig google.com
-nslookup | Simple DNS lookups	  | nslookup example.com
-_______________________________________________________
+## 2. DNS Tools (dig, nslookup)
 
-🔹 Find DNS Records:
-bash
+    Command	 | Description          | Example
+    _______________________________________________________
+    dig	     | Advanced DNS queries | dig google.com
+    nslookup | Simple DNS lookups	  | nslookup example.com
+    _______________________________________________________
 
-dig google.com MX      # Get mail servers  
-nslookup -type=AAAA google.com  # IPv6 lookup  
+- Find DNS Records:
 
-3. Changing IP and MAC Addresses
-Temporarily Change IP
-bash
+      dig google.com MX      # Get mail servers  
+      nslookup -type=AAAA google.com  # IPv6 lookup  
 
-sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
+## 3. Changing IP and MAC Addresses
+
+    sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
 
 or (modern ip command):
-bash
 
-sudo ip addr add 192.168.1.100/24 dev eth0
+    sudo ip addr add 192.168.1.100/24 dev eth0
 
 Spoof MAC Address
 
-    Disable interface:
-    bash
-
-sudo ifconfig eth0 down
-
-Change MAC:
-bash
-
-sudo ifconfig eth0 hw ether 00:11:22:33:44:55
-
-Re-enable:
-bash
-
+    #Disable interface
+    sudo ifconfig eth0 down
+    #Change MAC:
+    sudo ifconfig eth0 hw ether 00:11:22:33:44:55
+    #Re-enable:
     sudo ifconfig eth0 up
 
 🔹 Verify:
