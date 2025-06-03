@@ -55,15 +55,12 @@ Step 3: Import Kali into VirtualBox
 
 1. Set Up Kali Linux in a Virtual Machine
 
-Task:
+- Task
 
-    Download & install VirtualBox.
+Download & install VirtualBox.
 
     Import Kali Linux VM.
-
     Log in and update the system:
-    bash
-
     sudo apt update && sudo apt upgrade -y
 
 2. Explore the Linux Filesystem Using Terminal
