@@ -190,7 +190,7 @@ ifconfig (Legacy) vs. ip (Modern)
       Command	 | Description                   | Example
       _________________________________________________________
       ifconfig | View/set network interfaces   | ifconfig eth0
-      ip	      | More powerful replacement     | ip addr show
+      ip	     | More powerful replacement     | ip addr show
       iwconfig | Configure wireless interfaces | iwconfig wlan0
       __________________________________________________________
 
@@ -282,31 +282,29 @@ Objectives
   Set up essential hacking tools
   
 **Lessons**
-1. Using apt for Package Management
+## 1. Using apt for Package Management
+
 apt (Advanced Package Tool) is Kali’s default package manager.
-Command	    | Description	             | Example
+
+    Command	    | Description	             | Example
+    _________________________________________________________________________________
+    apt update	| Update package lists       | sudo apt update
+    apt upgrade	| Upgrade installed packages | sudo apt upgrade -y
+    apt install	| Install a package	         | sudo apt install nmap
+    apt remove	| Uninstall a package	       | sudo apt remove metasploit-framework
+    apt search	| Search for packages	       | apt search "password crack"
+    apt show	  | View package details	     | apt show wireshark
 _________________________________________________________________________________
-apt update	| Update package lists       | sudo apt update
-apt upgrade	| Upgrade installed packages | sudo apt upgrade -y
-apt install	| Install a package	         | sudo apt install nmap
-apt remove	| Uninstall a package	     | sudo apt remove metasploit-framework
-apt search	| Search for packages	     | apt search "password crack"
-apt show	| View package details	     | apt show wireshark
-_________________________________________________________________________________
 
-🔹 Pro Tip:
 
-    Use sudo apt autoremove to clean up unused dependencies.
-
-2. Adding Software Repositories
+## 2. Adding Software Repositories
 
 Sometimes tools aren’t in Kali’s default repos.
 Adding a Repo
 
-    Edit /etc/apt/sources.list:
-    bash
+ Edit /etc/apt/sources.list:
 
-sudo nano /etc/apt/sources.list
+    sudo nano /etc/apt/sources.list
 
 Add a new line (e.g., for Google Chrome):
 text
@@ -314,23 +312,18 @@ text
 deb http://dl.google.com/linux/chrome/deb/ stable main
 
 Add the repo’s GPG key:
-bash
 
-wget https://dl.google.com/linux/linux_signing_key.pub
-sudo apt-key add linux_signing_key.pub
+    wget https://dl.google.com/linux/linux_signing_key.pub
+    sudo apt-key add linux_signing_key.pub
 
 Update & install:
-bash
 
     sudo apt update && sudo apt install google-chrome-stable
 
-3. Installing from Git and GUIs
+## 3. Installing from Git and GUIs
 Git Installations (Manual Compilation)
 
-    Clone the repo:
-    bash
-
-git clone https://github.com/toolname/tool.git
+    git clone https://github.com/toolname/tool.git
 
 Install dependencies:
 bash
@@ -338,7 +331,6 @@ bash
 sudo apt install build-essential libssl-dev
 
 Compile & install:
-bash
 
     cd tool  
     ./configure  
@@ -347,13 +339,11 @@ bash
 
 GUI Installers (.deb, .run)
 
-    .deb files (like Chrome):
-    bash
-
-sudo dpkg -i package.deb
+.deb files (like Chrome):
+   
+    sudo dpkg -i package.deb
 
 .run or .sh files:
-bash
 
     chmod +x installer.sh  
     ./installer.sh  
@@ -361,57 +351,57 @@ bash
 Activities
 1. Install Key Hacking Tools
 
-✅ Task: Install the following using different methods:
-Method 1: apt (Default Repo)
-bash
+Task: Install the following using different methods:
 
-sudo apt install hydra sqlmap john
+Method 1: apt (Default Repo)
+
+    sudo apt install hydra sqlmap john
 
 Method 2: Git (Manual Compilation)
-bash
-
-git clone https://github.com/trustedsec/social-engineer-toolkit.git  
-cd social-engineer-toolkit  
-sudo python3 setup.py install
+    
+    git clone https://github.com/trustedsec/social-engineer-toolkit.git  
+    cd social-engineer-toolkit  
+    sudo python3 setup.py install
 
 Method 3: .deb Package (GUI Installer)
-bash
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
+    sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 # File and Directory Permissions
-Objectives
+**Objectives**
 
-✔ Understand Linux file permissions (chmod, chown)
-✔ Learn about users, groups, and ownership
-✔ Master special permissions (SUID, SGID, Sticky Bit)
-✔ Secure a script with custom permissions
-Lessons
-1. Users and Groups
-Command	     | Description	            | Example
-___________________________________________________________________
-whoami	     | Show current user	    | whoami
-groups	     | List user’s groups	    | groups kali
-id	         | Display user & group IDs | id
-sudo adduser | Create a new user	    | sudo adduser bob
-sudo usermod | Modify user groups	    | sudo usermod -aG sudo bob
-____________________________________________________________________
+- Understand Linux file permissions (chmod, chown)
+- Learn about users, groups, and ownership
+- Master special permissions (SUID, SGID, Sticky Bit)
+- Secure a script with custom permissions
 
-Key Files:
+**Lessons**
+## 1. Users and Groups
+ 
+        Command	     | Description	            | Example
+        ___________________________________________________________________
+        whoami	     | Show current user	    | whoami
+        groups	     | List user’s groups	    | groups kali
+        id	         | Display user & group IDs | id
+        sudo adduser | Create a new user	    | sudo adduser bob
+        sudo usermod | Modify user groups	    | sudo usermod -aG sudo bob
+        ____________________________________________________________________
 
-    /etc/passwd → User accounts
+- Key Files
 
-    /etc/group → Group definitions
+      /etc/passwd → User accounts
+  
+      /etc/group → Group definitions
+  
+      /etc/shadow → Encrypted passwords
 
-    /etc/shadow → Encrypted passwords
+## 2. Changing Ownership & Permissions
 
-2. Changing Ownership & Permissions
 chown (Change Owner)
-bash
 
-sudo chown user:group file.txt  # Change owner & group  
-sudo chown bob script.sh       # Change owner only  
+    sudo chown user:group file.txt  # Change owner & group  
+    sudo chown bob script.sh       # Change owner only  
 
 chmod (Change Permissions)
 
@@ -423,35 +413,35 @@ Permissions are set for:
 
     Others (o)
 
-Permission | Symbol	 | Number
-______________________________
-Read	   | r	     | 4
-Write	   | w	     | 2
-Execute	   | x	     | 1
-______________________________
+    Permission | Symbol	 | Number
+    ______________________________
+    Read	   | r	     | 4
+    Write	   | w	     | 2
+    Execute	   | x	     | 1
+    ______________________________
 
 Examples:
-bash
 
-chmod u+x script.sh      # Give user execute permission  
-chmod 755 script.sh      # rwxr-xr-x (User: 7, Group/Others: 5)  
-chmod -R 644 /var/www/   # Recursively set permissions  
+    chmod u+x script.sh      # Give user execute permission  
+    chmod 755 script.sh      # rwxr-xr-x (User: 7, Group/Others: 5)  
+    chmod -R 644 /var/www/   # Recursively set permissions  
 
-3. Special Permissions
-Permission	       | Symbol	| Number |	Effect
-______________________________________________________________
-SUID (Set User ID) | s	    | 4	     | Runs as file owner (e.g., passwd)
-SGID (Set Group ID)| s	    | 2	     | Runs as file group
-Sticky Bit	       | t	    | 1	     | Only owner can delete (e.g., /tmp)
-_______________________________________________________________
-🔹 Examples:
-bash
+## 3. Special Permissions
 
-chmod u+s /usr/bin/script  # SUID  
-chmod g+s /shared/         # SGID  
-chmod +t /tmp              # Sticky Bit  
+    Permission	       | Symbol	| Number |	Effect
+    ______________________________________________________________
+    SUID (Set User ID) | s	    | 4	     | Runs as file owner (e.g., passwd)
+    SGID (Set Group ID)| s	    | 2	     | Runs as file group
+    Sticky Bit	       | t	    | 1	     | Only owner can delete (e.g., /tmp)
+    _______________________________________________________________
+- Examples:
 
-Activities
+    chmod u+s /usr/bin/script  # SUID  
+    chmod g+s /shared/         # SGID  
+    chmod +t /tmp              # Sticky Bit  
+
+**Activities**
+
 1. Configure Permissions on a Script
 
 Task:
@@ -470,24 +460,24 @@ Task:
         Others can only read.
 
 Solution:
-bash
 
-chmod 754 hello.sh  # rwxr-xr--
+    chmod 754 hello.sh  # rwxr-xr--
 
 Verify:
-bash
 
-ls -l hello.sh  # Should show -rwxr-xr--
+    ls -l hello.sh  # Should show -rwxr-xr--
 
 # Process Management
-Objectives
+**Objectives**
 
-✔ Monitor running processes (ps, top, htop)
-✔ Control process priority (nice, renice)
-✔ Kill unresponsive or malicious processes (kill, pkill)
-✔ Manage background jobs (&, jobs, fg, bg)
-Lessons
-1. Viewing Processes
+- Monitor running processes (ps, top, htop)
+- Control process priority (nice, renice)
+- Kill unresponsive or malicious processes (kill, pkill)
+- Manage background jobs (&, jobs, fg, bg)
+  
+**Lessons**
+
+## 1. Viewing Processes
 Command	| Description	                                    | Example
 ______________________________________________________________________
 ps	    | List processes	                                | ps aux
@@ -495,72 +485,72 @@ top	    | Interactive process viewer 	                    | top
 htop	| Enhanced top (install with sudo apt install htop)	| htop
 ______________________________________________________________________
 
-🔹 Key Columns in ps aux:
+- Key Columns in ps aux:
 
-    USER → Process owner
+      USER → Process owner
 
-    PID → Process ID
+      PID → Process ID
 
-    %CPU → CPU usage
+      %CPU → CPU usage
 
-    %MEM → Memory usage
+      %MEM → Memory usage
 
-    COMMAND → Running command
+      COMMAND → Running command
 
-2. Managing Process Priority
-Command	| Description	                                   | Example
-_________________________________________________________________________________
-nice	| Start process with adjusted priority (-20 to 19) | nice -n 10 command
-renice	| Change priority of running process	           | renice -n 5 -p 1234
-__________________________________________________________________________________
+## 2. Managing Process Priority
 
-🔹 Priority Rules:
+    Command	| Description	                                   | Example
+    _________________________________________________________________________________
+    nice	| Start process with adjusted priority (-20 to 19) | nice -n 10 command
+    renice	| Change priority of running process	           | renice -n 5 -p 1234
+    __________________________________________________________________________________
+
+Priority Rules:
 
     Lower nice value = Higher priority (-20 = highest, 19 = lowest)
 
     Root can set negative values, users can only increase niceness
 
-3. Killing Processes
-Command | Description	       | Example
-________________________________________________
-kill	| Terminate by PID	   | kill 1234
-kill -9	| Force kill (SIGKILL) | kill -9 1234
-pkill	| Kill by name	       | pkill firefox
-killall	| Kill all instances   | killall chrome
-________________________________________________
+## 3. Killing Processes
 
-🔹 Common Signals:
+    Command | Description	       | Example
+    ________________________________________________
+    kill	| Terminate by PID	   | kill 1234
+    kill -9	| Force kill (SIGKILL) | kill -9 1234
+    pkill	| Kill by name	       | pkill firefox
+    killall	| Kill all instances   | killall chrome
+    ________________________________________________
 
-    SIGTERM (15) → Graceful termination (default)
+- Common Signals:
 
-    SIGKILL (9) → Force kill (use as last resort)
+      SIGTERM (15) → Graceful termination (default)
 
-4. Background Jobs
-Command	| Description	       | Example
-________________________________________________________
-&	    | Run in background	   | python3 script.py &
-jobs	| List background jobs | jobs
-fg	    | Bring to foreground  | fg %1
-bg	    | Resume in background | bg %1
-Ctrl+Z	| Suspend current job  | (Press keys)
-_______________________________________________________
-Activities
+      SIGKILL (9) → Force kill (use as last resort)
+
+## 4. Background Jobs
+
+    Command	| Description	       | Example
+    ________________________________________________________
+    &	    | Run in background	   | python3 script.py &
+    jobs	| List background jobs | jobs
+    fg	    | Bring to foreground  | fg %1
+    bg	    | Resume in background | bg %1
+    Ctrl+Z	| Suspend current job  | (Press keys)
+    _______________________________________________________
+**Activities**
 1. Identify & Terminate High-Resource Processes
 
-✅ Task:
+- Task
 
-    Find the top 3 CPU-consuming processes:
-    bash
+Find the top 3 CPU-consuming processes:
 
-ps aux --sort=-%cpu | head -n 4
+    ps aux --sort=-%cpu | head -n 4
 
 Kill the most resource-heavy process:
-bash
 
-kill [PID]
-
+    kill [PID]
+    
 If it doesn’t respond, force kill:
-bash
 
     kill -9 [PID]
 
@@ -570,11 +560,12 @@ Alternative: Use htop → Highlight process → Press F9 → Select SIGKILL.
 # Environment Variables
 Objectives
 
-✔ View and modify environment variables (env, export)
-✔ Customize your shell via .bashrc and .profile
-✔ Modify the PATH and PS1 prompt
-✔ Create persistent custom variables
-Lessons
+- View and modify environment variables (env, export)
+- Customize your shell via .bashrc and .profile
+- Modify the PATH and PS1 prompt
+- Create persistent custom variables
+
+**Lessons**
 1. Viewing & Changing Environment Variables
 Command	  | Description                    | Example
 ___________________________________________________________________
@@ -583,7 +574,8 @@ echo $VAR |	Print a specific variable	   | echo $PATH
 export	  | Set a temporary variable	   | export MY_VAR="Hello"
 unset	  | Remove a variable	           | unset MY_VAR
 _____________________________________________________________________
-🔹 Common Variables:
+
+Common Variables:
 
     PATH → Directories for executable files
 
