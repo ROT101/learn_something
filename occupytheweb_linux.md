@@ -1,17 +1,19 @@
 # Getting Started with Linux
-Objectives
+**Objectives**
 
-Understand why Linux is essential for cybersecurity and ethical hacking
- Install Kali Linux in VirtualBox (safe, isolated environment)
- Learn basic Linux terminal commands (pwd, whoami, ls, cd)
- Navigate the Linux filesystem structure
-Lessons
-1. Why Hackers Use Linux
+- Understand why Linux is essential for cybersecurity and ethical hacking
+- Install Kali Linux in VirtualBox (safe, isolated environment)
+- Learn basic Linux terminal commands (pwd, whoami, ls, cd)
+- Navigate the Linux filesystem structure
+  
+**Lessons**
+## 1. Why Hackers Use Linux
 
-🔹 Open-source → Full control over the OS.
-🔹 Powerful CLI → Automate tasks, run hacking tools efficiently.
-🔹 Pre-installed tools → Kali Linux comes with 500+ penetration testing tools.
-🔹 Stability & Security → Less prone to malware than Windows.
+ Open-source → Full control over the OS.
+ Powerful CLI → Automate tasks, run hacking tools efficiently.
+ Pre-installed tools → Kali Linux comes with 500+ penetration testing tools.
+ Stability & Security → Less prone to malware than Windows.
+ 
 2. Installing VirtualBox & Kali Linux
 Step 1: Download VirtualBox
 
