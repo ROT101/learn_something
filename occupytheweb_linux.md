@@ -34,20 +34,20 @@ Step 3: Import Kali into VirtualBox
     /	      | Root directory (everything starts here)
     /home	  | User personal files
     /etc	  | System configuration files
-    /bin,     | /sbin	Essential command binaries
+    /bin    | /sbin	Essential command binaries
     /var	  | Log files, databases
     /usr	  | User programs & utilities
     ______________________________________________________
     
 ## 4. Basic Linux Commands
 
-    Command | Description	          | Example
+    Command | Description	            | Example
     __________________________________________________________
     pwd	    | Print current directory | pwd → /home/kali
     whoami	| Show current username	  | whoami → kali
-    ls	    | List files/folders	  | ls -l (detailed list)
+    ls	    | List files/folders	    | ls -l (detailed list)
     cd	    | Change directory	      | cd /etc → Go to /etc
-    mkdir	| Create directory	      | mkdir HackFolder
+    mkdir	  | Create directory	      | mkdir HackFolder
     cat	    | Display file content	  | cat /etc/passwd
     __________________________________________________________
 
@@ -106,14 +106,14 @@ Task:
 
 ## 2. Searching with grep
 
-grep searches for patterns in files:
+grep searches for patterns in files
 
-    Flag | Effect	                  | Example
+    Flag  | Effect	                 | Example
     ___________________________________________________________________
     -i	  | Case-insensitive search  | grep -i "error" /var/log/syslog
-    -v	  | Invert match (exclude)	  | grep -v "192.168.1.1" access.log
-    -r	  | Recursive search	        | grep -r "password" /etc/
-    -A 2 | Show 2 lines after match	| grep -A 2 "failed" auth.log
+    -v	  | Invert match (exclude)	 | grep -v "192.168.1.1" access.log
+    -r	  | Recursive search	       | grep -r "password" /etc/
+    -A 2  | Show 2 lines after match | grep -A 2 "failed" auth.log
     ____________________________________________________________________
 
 Advanced:
@@ -122,7 +122,7 @@ Advanced:
 
 ## 3. Replacing Text with sed
 
-sed edits text without opening files (stream editor):
+sed edits text without opening files (stream editor)
 
     Command	                   | Effect
     ________________________________________________________________
@@ -153,7 +153,9 @@ Example:
 1. Hacker Challenge: Log Analysis
 
 Scenario:
-You found a server log (access.log). Extract:
+You found a server log (access.log). 
+
+Extract:
 
     All failed login attempts (grep).
 
@@ -183,7 +185,7 @@ Solution:
 **Lessons**
 
 ## 1. Network Interface Tools
-ifconfig (Legacy) vs. ip (Modern):
+ifconfig (Legacy) vs. ip (Modern)
 
       Command	 | Description                   | Example
       _________________________________________________________
@@ -192,7 +194,7 @@ ifconfig (Legacy) vs. ip (Modern):
       iwconfig | Configure wireless interfaces | iwconfig wlan0
       __________________________________________________________
 
-- Key Uses:
+- Key Uses
   
       Check IP, MAC, and interface status.
   
@@ -228,12 +230,11 @@ Spoof MAC Address
     #Re-enable:
     sudo ifconfig eth0 up
 
-🔹 Verify:
-bash
+- Verify:
+ 
+      ifconfig eth0 | grep ether
 
-ifconfig eth0 | grep ether
-
-Activities
+**Activities**
 1. Assign a New IP Address
 
 Task:
@@ -241,12 +242,9 @@ Task:
     Check current IP:
     bash
 
-ip addr show eth0
-
-Assign a new IP (e.g., 192.168.1.150):
-bash
-
-sudo ip addr add 192.168.1.150/24 dev eth0
+    ip addr show eth0
+    #Assign a new IP (e.g., 192.168.1.150):
+    sudo ip addr add 192.168.1.150/24 dev eth0
 
 Verify:
 bash
