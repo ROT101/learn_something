@@ -25,7 +25,6 @@ Step 3: Import Kali into VirtualBox
 
     Start the VM → Login (kali / kali).
 
-💡 Tip: Enable "Shared Clipboard" and "Drag & Drop" in VM settings for easier use.
 3. Linux Filesystem Overview
 Directory | Purpose
 ____________________________________________________
@@ -102,11 +101,11 @@ ________________________________________________________________________
 2. Searching with grep
 
 grep searches for patterns in files.
-Flag | Effect	                | Example
+Flag | Effect	                  | Example
 ___________________________________________________________________
--i	 | Case-insensitive search	| grep -i "error" /var/log/syslog
--v	 | Invert match (exclude)	| grep -v "192.168.1.1" access.log
--r	 | Recursive search	        | grep -r "password" /etc/
+-i	  | Case-insensitive search  | grep -i "error" /var/log/syslog
+-v	  | Invert match (exclude)	  | grep -v "192.168.1.1" access.log
+-r	  | Recursive search	        | grep -r "password" /etc/
 -A 2 | Show 2 lines after match	| grep -A 2 "failed" auth.log
 ____________________________________________________________________
 
@@ -180,7 +179,7 @@ ifconfig (Legacy) vs. ip (Modern)
 Command	 | Description                   | Example
 _________________________________________________________
 ifconfig | View/set network interfaces   | ifconfig eth0
-ip	     | More powerful replacement     | ip addr show
+ip	      | More powerful replacement     | ip addr show
 iwconfig | Configure wireless interfaces | iwconfig wlan0
 __________________________________________________________
 
@@ -194,7 +193,7 @@ __________________________________________________________
 Command	 | Description          | Example
 _______________________________________________________
 dig	     | Advanced DNS queries | dig google.com
-nslookup | Simple DNS lookups	| nslookup example.com
+nslookup | Simple DNS lookups	  | nslookup example.com
 _______________________________________________________
 
 🔹 Find DNS Records:
@@ -281,13 +280,13 @@ bash
 # Managing Software in Kali Linux
 Objectives
 
-✔ Master package management with apt
-✔ Learn to add software repositories
-✔ Install tools from GitHub and GUI installers
-✔ Set up essential hacking tools
-Lessons
+  Master package management with apt
+  Learn to add software repositories
+  Install tools from GitHub and GUI installers
+  Set up essential hacking tools
+  
+**Lessons**
 1. Using apt for Package Management
-
 apt (Advanced Package Tool) is Kali’s default package manager.
 Command	    | Description	             | Example
 _________________________________________________________________________________
