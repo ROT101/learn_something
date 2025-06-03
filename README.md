@@ -3,7 +3,7 @@
 
 
 **Theory** \
- [network basics](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) 
+ [network basics](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) \
  [linux basis](https://github.com/ROT101/learn_something/blob/main/occupytheweb_linux.md)
 
  # virtualbox installation
