@@ -32,7 +32,7 @@
 
 ## 4. MAC vs IP Address
 
-    MAC Address:
+ MAC Address:
 
         A Physical/hardware address Assigned by manufacturer 
 
