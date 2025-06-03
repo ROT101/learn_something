@@ -2,11 +2,9 @@
 
 **Objectives**
 
-    Understand the basic components and terminology of networks
-
-    Differentiate between types of networks: LAN, WAN, PAN, etc.
-
-    Comprehend the roles of MAC and IP addresses
+- Understand the basic components and terminology of networks
+- Differentiate between types of networks: LAN, WAN, PAN, etc.
+-  Comprehend the roles of MAC and IP addresses
 ------------------------
 ## 1. What is a Network?
 
@@ -95,12 +93,11 @@ linux
 -------------------------------------------------
 **Objectives**
 
-    Understand the 7 layers of the OSI model.
-
-    Learn the 4 layers of the TCP/IP model.
-
-    Relate real-world protocols to each layer.
+- Understand the 7 layers of the OSI model.
+- Learn the 4 layers of the TCP/IP model.
+- Relate real-world protocols to each layer.
 --------------------------------------------------
+
 **Lessons**
 
 ## 1. The OSI Model: 7 Layers
@@ -161,15 +158,15 @@ The TCP/IP model is a simplified version used in real-world networking:
 **Activities**
 1. Memorize the OSI Model (Mnemonic Devices)
 
-🔹 From Layer 7 to Layer 1:
+- From Layer 7 to Layer 1:
 
-    "All People Seem To Need Data Processing"
+        "All People Seem To Need Data Processing"
 
         Application → Presentation → Session → Transport → Network → Data Link → Physical
 
-🔹 From Layer 1 to Layer 7:
+- From Layer 1 to Layer 7:
 
-    "Please Do Not Throw Sausage Pizza Away"
+        "Please Do Not Throw Sausage Pizza Away"
 
         Physical → Data Link → Network → Transport → Session → Presentation → Application
 
@@ -186,24 +183,24 @@ The TCP/IP model is a simplified version used in real-world networking:
         Cables, Hubs  | Physical     | Network Acces
         ______________________________________________
 
-🔹 Practical Examples:
+- Practical Examples:
 
-    Ping (ICMP) → Network (OSI) / Internet (TCP/IP)
+        Ping (ICMP) → Network (OSI) / Internet (TCP/IP)
 
-    Web Browsing (HTTP) → Application (Both)
+        Web Browsing (HTTP) → Application (Both)
 
-    Switches → Data Link (OSI) / Network Access (TCP/IP)
+        Switches → Data Link (OSI) / Network Access (TCP/IP)
 
-    Routers → Network (OSI) / Internet (TCP/IP)
+        Routers → Network (OSI) / Internet (TCP/IP)
 
 ## IP Addressing and Routing
 **Objectives**
 
-    Learn about IPv4 addressing and its structure.
+- Learn about IPv4 addressing and its structure.
 
-    Understand subnetting and CIDR notation.
+- Understand subnetting and CIDR notation.
 
-    Explore routing basics and NAT (Network Address Translation).
+- Explore routing basics and NAT (Network Address Translation).
 
 **Lessons**
 ## 1. IPv4 Addressing Structure
@@ -271,7 +268,7 @@ The TCP/IP model is a simplified version used in real-world networking:
 
 **4. NAT and DHCP**
 
-🔹 NAT (Network Address Translation):
+- NAT (Network Address Translation):
 
     Converts private IPs to a public IP for Internet access.
 
@@ -283,7 +280,7 @@ The TCP/IP model is a simplified version used in real-world networking:
 
         PAT (Port Address Translation) (Many private → 1 public, using ports)
 
-🔹 DHCP (Dynamic Host Configuration Protocol):
+- DHCP (Dynamic Host Configuration Protocol):
 
     Automatically assigns IP addresses to devices.
 
@@ -324,21 +321,21 @@ Problem 2:
 
 2. View and Interpret Your IP Routing Table
 
-🔹 Windows:
+- Windows:
 
-    Open Command Prompt
+        Open Command Prompt
 
-    Type:
-    sh route print
+        Type:
+        sh route print
 
         Look for Network Destination, Netmask, Gateway, and Interface.
 
-🔹 Linux/Mac:
+- Linux/Mac:
 
-    Open Terminal
+        Open Terminal
 
-    Type:
-    sh netstat -rn
+        Type:
+        sh netstat -rn
 
     Example Output:
 
@@ -396,27 +393,27 @@ Problem 2:
         3389  | TCP	RDP	    | Remote Desktop Protocol
         _________________________________________________
 
-        🔹 Well-Known Ports: 0-1023 (System services)
-        🔹 Registered Ports: 1024-49151 (Applications)
-        🔹 Dynamic/Private Ports: 49152-65535 (Temporary connections)
+         Well-Known Ports: 0-1023 (System services)
+         Registered Ports: 1024-49151 (Applications)
+         Dynamic/Private Ports: 49152-65535 (Temporary connections)
 
 ## 3. TCP/IP Packet Anatomy
 
-🔹 TCP Segment Structure:
+- TCP Segment Structure:
 
-    Field	                         | Description
-    _______________________________________________________________________
-    Source Port	                     | Sender’s port
-    Destination Port	             | Receiver’s port
-    Sequence Number	                 | Tracks packet order
-    Acknowledgment Number	         | Confirms received data
-    Flags (SYN, ACK, FIN, RST, etc.) |	Control connection state
-    Window Size	Flow control         | (how much data receiver can accept)
-    _______________________________________________________________________
+        Field	                         | Description
+        _______________________________________________________________________
+        Source Port	                     | Sender’s port
+        Destination Port	             | Receiver’s port
+        Sequence Number	                 | Tracks packet order
+        Acknowledgment Number	         | Confirms received data
+        Flags (SYN, ACK, FIN, RST, etc.) |	Control connection state
+        Window Size	Flow control         | (how much data receiver can accept)
+        _______________________________________________________________________
 
-🔹 UDP Datagram Structure:
+- UDP Datagram Structure:
 
-    Simpler: Source Port, Destination Port, Length, Checksum.
+        Simpler: Source Port, Destination Port, Length, Checksum.
 
 ## 4. TCP Handshake (3-Way Handshake)
 
@@ -426,15 +423,15 @@ Problem 2:
 
     ACK → Client sends ACK (Acknowledgment).
 
-🔹 Connection Termination (4-Way Handshake):
+- Connection Termination (4-Way Handshake):
 
-    FIN → One side requests closure.
-
-    ACK → Other side acknowledges.
-
-    FIN → Other side also closes.
-
-    ACK → Final confirmation.
+        FIN → One side requests closure.
+    
+        ACK → Other side acknowledges.
+    
+        FIN → Other side also closes.
+    
+        ACK → Final confirmation.
 
 **Activities**
 ## 1. Analyze TCP Flags Using Wireshark
@@ -455,35 +452,36 @@ Problem 2:
 
         RST = Abrupt reset
 
-🔹 Example:
+- Example:
 
-    Open a website in a browser and observe the SYN → SYN-ACK → ACK sequence.
+        Open a website in a browser and observe the SYN → SYN-ACK → ACK sequence.
 
 2. Run a Basic Port Scan Using Nmap
 
-    Install Nmap (nmap.org).
-
-    Scan Your Local Network:
-    sh
+        Install Nmap (nmap.org).
+    
+        Scan Your Local Network:
+        sh
 
 nmap -sV 192.168.1.0/24
 
     -sV = Detect service versions.
 
 Scan a Single Device:
-sh
+
+    sh
 
     nmap -p 1-1000 192.168.1.1
 
-        Checks ports 1-1000 on a router.
+    Checks ports 1-1000 on a router.
 
-🔹 Common Nmap Flags:
+Common Nmap Flags:
 
-    -sS = Stealth scan (SYN scan)
-
-    -O = OS detection
-
-    -A = Aggressive scan (OS + version detection)
+        -sS = Stealth scan (SYN scan)
+    
+        -O = OS detection
+    
+        -A = Aggressive scan (OS + version detection)
 
 ## Command-Line Network Tools
 
@@ -543,16 +541,15 @@ sh
 
 ## 4. Introduction to nmap (Network Scanning)
 
-🔹 Basic Usage:
-sh
+- Basic Usage:
 
-nmap -sV 192.168.1.1
+        nmap -sV 192.168.1.1
+    
+        -sV = Service detection
+    
+        -O = OS detection
 
-    -sV = Service detection
-
-    -O = OS detection
-
-🔹 Common Scan Types:
+- Common Scan Types:
 
         Scan Type	 | Command	                   |Purpose
         ________________________________________________________________________________
@@ -564,11 +561,11 @@ nmap -sV 192.168.1.1
 
 1. Explore Network Interfaces on Your System
 
-🔹 Linux/Mac:
-sh
-
-ip addr show   # Modern
-ifconfig       # Legacy
+- Linux/Mac:
+        sh
+        
+        ip addr show   # Modern
+        ifconfig       # Legacy
 
 Look for:
 
@@ -578,32 +575,32 @@ Look for:
 
     Status (UP = active).
 
-🔹 Windows:
-sh
-
-ipconfig /all
+- Windows:
+        sh
+        
+        ipconfig /all
 
 2. Use nmap to Scan Local Devices
 
     Find your local subnet:
-    sh
 
-ip route show  # Linux/Mac
-ipconfig       # Windows
+        sh
+        ip route show  # Linux/Mac
+        ipconfig       # Windows
+        
+        (Example: 192.168.1.0/24)
+        
+        Scan for live hosts:
+        sh
+        
+        nmap -sn 192.168.1.0/24
+        
+        Scan a specific device:
+        sh
 
-(Example: 192.168.1.0/24)
+        nmap -A 192.168.1.1
 
-Scan for live hosts:
-sh
-
-nmap -sn 192.168.1.0/24
-
-Scan a specific device:
-sh
-
-    nmap -A 192.168.1.1
-
-    (-A = Aggressive scan: OS + service detection)
+        (-A = Aggressive scan: OS + service detection)
 
 ## Network Topologies and Devices
 **Objectives**
@@ -616,6 +613,7 @@ sh
 
 **Lessons**
 ## 1. Network Topologies
+
 Topologies define how devices are physically or logically connected.
     
 **Physical Topologies**
@@ -646,11 +644,11 @@ Topologies define how devices are physically or logically connected.
 
 - Key Differences:
 
-    Hub → All devices see all traffic (inefficient).
-
-    Switch → Learns MACs, sends data only to the correct device.
-
-    Router → Connects different networks (e.g., LAN to Internet).
+        Hub → All devices see all traffic (inefficient).
+    
+        Switch → Learns MACs, sends data only to the correct device.
+    
+        Router → Connects different networks (e.g., LAN to Internet).
 
 3. Firewall Basics
 
@@ -666,9 +664,9 @@ Topologies define how devices are physically or logically connected.
 
 -  Common Firewall Rules:
 
-    Allow HTTP (Port 80) but block FTP (Port 21).
-
-    Block ICMP (Disable ping responses for security).
+        Allow HTTP (Port 80) but block FTP (Port 21).
+    
+        Block ICMP (Disable ping responses for security).
 
 **Activities**
 
@@ -711,16 +709,14 @@ Key Elements to Label:
     Connections (Wired/Wireless)
 
 ## Wireless Networks and Attacks
-Objectives
+**Objectives**
 
-    Understand Wi-Fi standards (802.11) and encryption protocols (WEP, WPA, WPA2, WPA3).
+- Understand Wi-Fi standards (802.11) and encryption protocols (WEP, WPA, WPA2, WPA3).
+- Identify common Wi-Fi attacks (deauth, evil twin, KRACK).
+- Learn ethical hacking tools (Aircrack-ng, Wireshark).
 
-    Identify common Wi-Fi attacks (deauth, evil twin, KRACK).
-
-    Learn ethical hacking tools (Aircrack-ng, Wireshark).
-
-Lessons
-1. 802.11 Wi-Fi Standards
+**Lessons**
+## 1. 802.11 Wi-Fi Standards
 
         Standard           | Frequency   | Max Speed | Range
         _______________________________________________________
@@ -731,15 +727,15 @@ Lessons
         802.11ac (Wi-Fi 5) | 5 GHz	     | 6.9 Gbps	 | Medium
         802.11ax (Wi-Fi 6) | 2.4/5/6 GHz | 9.6 Gbps	 | Long
         _________________________________________________________
-🔹 Key Takeaways:
+- Key Takeaways:
 
-    2.4 GHz → Better range, more interference.
+        2.4 GHz → Better range, more interference.
+    
+        5 GHz → Faster speeds, less interference.
+    
+        6 GHz (Wi-Fi 6E) → New, ultra-fast, less congestion.
 
-    5 GHz → Faster speeds, less interference.
-
-    6 GHz (Wi-Fi 6E) → New, ultra-fast, less congestion.
-
-2. Wi-Fi Security Protocols
+## 2. Wi-Fi Security Protocols
 
         Protocol	                   | Encryption	| Security Level              | Flaws
         _________________________________________________________________________________________________
@@ -749,15 +745,15 @@ Lessons
         WPA3	                       | AES-GCMP   | Very Strong                 | Resistant to KRACK
         _________________________________________________________________________________________________
 
-🔹 Best Practices:
+- Best Practices:
 
-    Avoid WEP/WPA (use WPA2/WPA3).
+        Avoid WEP/WPA (use WPA2/WPA3).
 
-    Use strong passwords (12+ chars, symbols, numbers).
+        Use strong passwords (12+ chars, symbols, numbers).
 
-    Disable WPS (Wi-Fi Protected Setup – easily hacked).
+        Disable WPS (Wi-Fi Protected Setup – easily hacked).
 
-3. Common Wi-Fi Attacks
+## 3. Common Wi-Fi Attacks
 
         Attack	                | How It Works	                    | Tool Used
         ___________________________________________________________________________
@@ -768,7 +764,7 @@ Lessons
         WPA Handshake Capture   |  Captures login hash for cracking	| airodump-ng
         ___________________________________________________________________________
 
-4. Aircrack-ng Suite (Ethical Hacking Tool)
+## 4. Aircrack-ng Suite (Ethical Hacking Tool)
 
 Aircrack-ng is a Wi-Fi security auditing toolset used to:
 
@@ -780,8 +776,9 @@ Aircrack-ng is a Wi-Fi security auditing toolset used to:
 
     Crack passwords (aircrack-ng)
 
-🔹 Legal Note: Only use on your own networks or with explicit permission.
-Activities
+- Legal Note: Only use on your own networks or with explicit permission.
+- 
+**Activities**
 1. Scan for Wi-Fi Networks & Analyze Encryption
 
 Tools Needed:
@@ -798,7 +795,6 @@ Steps:
 airmon-ng start wlan0
 
 Scan networks:
-bash
 
     airodump-ng wlan0mon
 
@@ -813,7 +809,7 @@ Steps:
     Target a network:
     bash
 
-airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon
+    airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon
 
     -c 6 → Channel
 
@@ -822,9 +818,8 @@ airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon
     -w capture → Save to file
 
 Force a handshake (deauth attack):
-bash
 
-aireplay-ng -0 2 -a 00:11:22:33:44:55 -c AA:BB:CC:DD:EE:FF wlan0mon
+    aireplay-ng -0 2 -a 00:11:22:33:44:55 -c AA:BB:CC:DD:EE:FF wlan0mon
 
     -0 2 → Send 2 deauth packets
 
@@ -837,14 +832,13 @@ Check for handshake:
     Aircrack-ng will show "WPA handshake captured".
 
 Crack the password (optional):
-bash
 
-aircrack-ng -w rockyou.txt capture.cap
+    aircrack-ng -w rockyou.txt capture.cap
 
     -w rockyou.txt → Wordlist
 
 # Firewalls and Packet Filtering
-Objectives
+**Objectives**
 
     Understand Linux iptables and its role in packet filtering.
 
@@ -852,11 +846,12 @@ Objectives
 
     Set default policies and manage chains (INPUT, OUTPUT, FORWARD).
 
-Lessons
-1. iptables Overview
+**Lessons**
+## 1. iptables Overview
 
 iptables is a Linux firewall that filters traffic using tables, chains, and rules.
-Key Components
+- Key Components
+
         Component | Description
         _________________________________________________________________
         Tables	  | filter (default), nat, mangle, raw
@@ -864,19 +859,18 @@ Key Components
         Rules	  | Define allow/deny actions based on IP/port/protocol
         __________________________________________________________________
 
-🔹 Common Policies:
+- Common Policies:
 
-    ACCEPT → Allow traffic
+        ACCEPT → Allow traffic
+    
+        DROP → Silently block
+    
+        REJECT → Block + send error
 
-    DROP → Silently block
-
-    REJECT → Block + send error
-
-2. Writing Basic Rules
+## 2. Writing Basic Rules
 Rule Syntax
-bash
 
-iptables -A [CHAIN] -p [PROTOCOL] --dport [PORT] -j [ACTION]
+    iptables -A [CHAIN] -p [PROTOCOL] --dport [PORT] -j [ACTION]
 
         Flag    | Meaning	       | Example
         __________________________________________
@@ -887,18 +881,15 @@ iptables -A [CHAIN] -p [PROTOCOL] --dport [PORT] -j [ACTION]
         __________________________________________
 Example Rules
 
-    Allow SSH (Port 22):
-    bash
+Allow SSH (Port 22):
 
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 
 Block Ping (ICMP):
-bash
 
-iptables -A INPUT -p icmp -j DROP
+    iptables -A INPUT -p icmp -j DROP
 
 Allow HTTP/HTTPS:
-bash
 
     iptables -A INPUT -p tcp --dport 80 -j ACCEPT  
     iptables -A INPUT -p tcp --dport 443 -j ACCEPT
@@ -906,19 +897,17 @@ bash
 3. Default Policies and Chains
 
 Set default actions if no rule matches:
-bash
 
-iptables -P INPUT DROP    # Block all incoming by default  
-iptables -P OUTPUT ACCEPT # Allow all outgoing  
-iptables -P FORWARD DROP  # Block forwarded traffic  
+    iptables -P INPUT DROP    # Block all incoming by default  
+    iptables -P OUTPUT ACCEPT # Allow all outgoing  
+    iptables -P FORWARD DROP  # Block forwarded traffic  
 
-🔹 View Rules:
-bash
+- View Rules:
+  
+        iptables -L -v  # List all rules  
+        iptables -L -n  # Show IPs as numbers (no DNS lookup)  
 
-iptables -L -v  # List all rules  
-iptables -L -n  # Show IPs as numbers (no DNS lookup)  
-
-Activities
+**Activities**
 1. Configure iptables to Allow/Block Traffic
 
 Task:
@@ -928,19 +917,21 @@ Task:
     Block all other incoming traffic.
 
 Solution:
-bash
 
-# Set default policies  
-iptables -P INPUT DROP  
-iptables -P OUTPUT ACCEPT  
+Set default policies:
 
-# Allow SSH, HTTP, HTTPS  
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT  
-iptables -A INPUT -p tcp --dport 80 -j ACCEPT  
-iptables -A INPUT -p tcp --dport 443 -j ACCEPT  
+    iptables -P INPUT DROP  
+    iptables -P OUTPUT ACCEPT  
 
-# Allow loopback (important for system services)  
-iptables -A INPUT -i lo -j ACCEPT  
+Allow SSH, HTTP, HTTPS: 
+
+    iptables -A INPUT -p tcp --dport 22 -j ACCEPT  
+    iptables -A INPUT -p tcp --dport 80 -j ACCEPT  
+    iptables -A INPUT -p tcp --dport 443 -j ACCEPT  
+
+Allow loopback (important for system services) : 
+
+    iptables -A INPUT -i lo -j ACCEPT  
 
 Verify:
 bash
@@ -954,17 +945,18 @@ Task:
     Delete all rules and reset to default allow.
 
 Solution:
-bash
 
-# Flush all rules  
-iptables -F  
+Flush all rules :
 
-# Reset policies to ACCEPT  
-iptables -P INPUT ACCEPT  
-iptables -P OUTPUT ACCEPT  
-iptables -P FORWARD ACCEPT  
+    iptables -F  
 
-# Verify  
+Reset policies to ACCEPT :
+
+    iptables -P INPUT ACCEPT  
+    iptables -P OUTPUT ACCEPT  
+    iptables -P FORWARD ACCEPT  
+
+Verify  
 iptables -L  
 
 
