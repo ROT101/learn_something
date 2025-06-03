@@ -31,12 +31,12 @@ Step 3: Import Kali into VirtualBox
 
     Directory | Purpose
     ____________________________________________________
-    /	      | Root directory (everything starts here)
-    /home	  | User personal files
-    /etc	  | System configuration files
+    /       | Root directory (everything starts here)
+    /home   | User personal files
+    /etc    | System configuration files
     /bin    | /sbin	Essential command binaries
-    /var	  | Log files, databases
-    /usr	  | User programs & utilities
+    /var    | Log files, databases
+    /usr    | User programs & utilities
     ______________________________________________________
     
 ## 4. Basic Linux Commands
