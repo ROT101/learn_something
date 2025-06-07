@@ -43,12 +43,12 @@ Step 3: Import Kali into VirtualBox
 
     Command | Description	            | Example
     __________________________________________________________
-    pwd	    | Print current directory | pwd → /home/kali
-    whoami	| Show current username	  | whoami → kali
-    ls	    | List files/folders	    | ls -l (detailed list)
-    cd	    | Change directory	      | cd /etc → Go to /etc
-    mkdir	  | Create directory	      | mkdir HackFolder
-    cat	    | Display file content	  | cat /etc/passwd
+    pwd     | Print current directory | pwd → /home/kali
+    whoami  | Show current username	  | whoami → kali
+    ls      | List files/folders	    | ls -l (detailed list)
+    cd      | Change directory	      | cd /etc → Go to /etc
+    mkdir   | Create directory	      | mkdir HackFolder
+    cat     | Display file content	  | cat /etc/passwd
     __________________________________________________________
 
 **Activities**
