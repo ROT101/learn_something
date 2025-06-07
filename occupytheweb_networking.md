@@ -1009,6 +1009,7 @@ Key Features
     Follow TCP Stream (reconstructs full conversations).
 
 Basic Filters
+
         Filter	               | Description
         ________________________________________________
         ip.addr == 192.168.1.1 | Filter by IP
