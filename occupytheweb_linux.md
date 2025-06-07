@@ -366,6 +366,7 @@ Method 3: .deb Package (GUI Installer)
     sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 # File and Directory Permissions
+
 **Objectives**
 
 - Understand Linux file permissions (chmod, chown)
@@ -374,6 +375,7 @@ Method 3: .deb Package (GUI Installer)
 - Secure a script with custom permissions
 
 **Lessons**
+
 ## 1. Users and Groups
  
         Command	     | Description	            | Example
@@ -534,7 +536,9 @@ Priority Rules:
     bg	    | Resume in background | bg %1
     Ctrl+Z	| Suspend current job  | (Press keys)
     _______________________________________________________
+    
 **Activities**
+
 1. Identify & Terminate High-Resource Processes
 
 - Task
@@ -555,7 +559,8 @@ Alternative: Use htop → Highlight process → Press F9 → Select SIGKILL.
 
 
 # Environment Variables
-Objectives
+
+**Objectives**
 
 - View and modify environment variables (env, export)
 - Customize your shell via .bashrc and .profile
@@ -563,6 +568,7 @@ Objectives
 - Create persistent custom variables
 
 **Lessons**
+
 1. Viewing & Changing Environment Variables
 Command	  | Description                    | Example
 ___________________________________________________________________
@@ -572,15 +578,15 @@ export	  | Set a temporary variable	   | export MY_VAR="Hello"
 unset	  | Remove a variable	           | unset MY_VAR
 _____________________________________________________________________
 
-Common Variables:
+- Common Variables:
 
-    PATH → Directories for executable files
-
-    HOME → User’s home directory
-
-    USER → Current username
-
-    PS1 → Shell prompt format
+        PATH → Directories for executable files
+    
+        HOME → User’s home directory
+    
+        USER → Current username
+    
+        PS1 → Shell prompt format
 
 2. Updating .bashrc and .profile
 
@@ -589,158 +595,150 @@ File	   | When It Runs	             | Use Case
 ~/.bashrc  | Every new interactive shell | Aliases, prompt changes
 ~/.profile | (or ~/.bash_profile)	     | Login shells	Environment variables, startup programs
 
-🔹 Apply Changes Without Relogin:
-bash
+- Apply Changes Without Relogin:
 
-source ~/.bashrc  # Reload .bashrc
+      source ~/.bashrc  # Reload .bashrc
 
 3. Modifying PATH and PS1
+   
 Add a Directory to PATH
-bash
 
-export PATH=$PATH:/my/custom/dir  # Temporary  
-echo 'export PATH=$PATH:/my/custom/dir' >> ~/.bashrc  # Permanent  
+    export PATH=$PATH:/my/custom/dir  # Temporary  
+    echo 'export PATH=$PATH:/my/custom/dir' >> ~/.bashrc  # Permanent  
 
 Customize PS1 (Shell Prompt)
-bash
 
 export PS1="\u@\h:\w\$ "  # User@Host:Dir$  
 
-🔹 Common PS1 Symbols:
+Common PS1 Symbols:
+  
+      \u → Username
+  
+      \h → Hostname
+  
+      \w → Current directory
+  
+      \$ → # if root, $ if user
 
-    \u → Username
+**Activities**
 
-    \h → Hostname
-
-    \w → Current directory
-
-    \$ → # if root, $ if user
-
-Activities
 1. Create and Persist a Custom Environment Variable
 
 Task:
 
-    Set a temporary variable:
-    bash
+ Set a temporary variable:
 
-export SECRET_KEY="12345"
+      export SECRET_KEY="12345"
 
 Verify it exists:
-bash
 
-echo $SECRET_KEY
+    echo $SECRET_KEY
 
 Make it persist (add to ~/.bashrc):
-bash
 
-echo 'export SECRET_KEY="12345"' >> ~/.bashrc
+    echo 'export SECRET_KEY="12345"' >> ~/.bashrc
 
 Reload .bashrc:
-bash
 
     source ~/.bashrc
 
 Bonus: Hide the variable from env for stealth:
-bash
 
-export SECRET_KEY="12345" 2>/dev/null
+    export SECRET_KEY="12345" 2>/dev/null
 
 # Bash Scripting for Hackers
-Objectives
 
-✔ Write and execute Bash scripts for automation
-✔ Use variables, loops, and conditionals
-✔ Build a network scanner in Bash
-✔ Learn essential built-in commands
-Lessons
+**Objectives**
+
+- Write and execute Bash scripts for automation
+- Use variables, loops, and conditionals
+- Build a network scanner in Bash
+- Learn essential built-in commands
+
+**Lessons**
+
 1. Script Basics
 Create & Run a Script
 
-    Write the script (nano scan.sh):
-    bash
 
-#!/bin/bash
-echo "Running network scan..."
+ Write the script (nano scan.sh):
+
+      #!/bin/bash
+      echo "Running network scan..."
 
 Make it executable:
-bash
 
-chmod +x scan.sh
+    chmod +x scan.sh
 
 Run it:
-bash
 
     ./scan.sh
+Variables & User Input:
 
-Variables & User Input
-bash
-
-#!/bin/bash
-TARGET="192.168.1.1"
-read -p "Enter IP: " TARGET  # Prompt user
-echo "Scanning $TARGET..."
+    #!/bin/bash
+    TARGET="192.168.1.1"
+    read -p "Enter IP: " TARGET  # Prompt user
+    echo "Scanning $TARGET..."
 
 2. Writing a Port Scanner
 
 A simple TCP port scanner in Bash:
-bash
 
-#!/bin/bash
+    #!/bin/bash
 
-TARGET="192.168.1.1"
-PORTS="22 80 443"  # Common ports
+    TARGET="192.168.1.1"
+    PORTS="22 80 443"  # Common ports
+    
+    for PORT in $PORTS; do
+      timeout 1 bash -c "echo >/dev/tcp/$TARGET/$PORT" 2>/dev/null &&
+        echo "Port $PORT is OPEN" ||
+        echo "Port $PORT is CLOSED"
+    done
 
-for PORT in $PORTS; do
-  timeout 1 bash -c "echo >/dev/tcp/$TARGET/$PORT" 2>/dev/null &&
-    echo "Port $PORT is OPEN" ||
-    echo "Port $PORT is CLOSED"
-done
+- How It Works:
 
-🔹 How It Works:
-
-    Uses /dev/tcp for TCP checks (no nmap needed).
-
-    timeout 1 → Waits 1 second per port.
-
-    2>/dev/null → Hides errors.
+      Uses /dev/tcp for TCP checks (no nmap needed).
+  
+      timeout 1 → Waits 1 second per port.
+  
+      2>/dev/null → Hides errors.
 
 3. Built-in Bash Commands
-Command	    | Description	   | Example
-____________________________________________________________
-echo	    | Print text	   | echo "Hello"
-read	    | Get user input   | read -p "Enter IP: " IP
-test / [ ]	| Condition checks | if [ $PORT -eq 80 ]; then
-for / while | Loops	           | for IP in {1..10}; do
-if / else	| Conditionals	   | if ping -c 1 $IP; then
-_____________________________________________________________
-Activities
+   
+        Command	    | Description	   | Example
+        ____________________________________________________________
+        echo	    | Print text	   | echo "Hello"
+        read	    | Get user input   | read -p "Enter IP: " IP
+        test / [ ]	| Condition checks | if [ $PORT -eq 80 ]; then
+        for / while | Loops	           | for IP in {1..10}; do
+        if / else	| Conditionals	   | if ping -c 1 $IP; then
+        _____________________________________________________________
+   
+**Activities**
+
 1. Build a Functional Network Scanner
 
 Task:
 
-    Create scanner.sh:
-    bash
+ Create scanner.sh:
+  
+    #!/bin/bash
+    echo "Network Scanner"
+    read -p "Enter IP range (e.g., 192.168.1.1-10): " RANGE
 
-#!/bin/bash
-echo "Network Scanner"
-read -p "Enter IP range (e.g., 192.168.1.1-10): " RANGE
-
-START=$(echo $RANGE | cut -d '-' -f1 | cut -d '.' -f4)
-END=$(echo $RANGE | cut -d '-' -f2)
-BASE=$(echo $RANGE | cut -d '.' -f1-3)
-
-for IP in $(seq $START $END); do
-  ping -c 1 $BASE.$IP | grep "bytes from" | cut -d " " -f4 | tr -d ":"
-done
+    START=$(echo $RANGE | cut -d '-' -f1 | cut -d '.' -f4)
+    END=$(echo $RANGE | cut -d '-' -f2)
+    BASE=$(echo $RANGE | cut -d '.' -f1-3)
+    
+    for IP in $(seq $START $END); do
+      ping -c 1 $BASE.$IP | grep "bytes from" | cut -d " " -f4 | tr -d ":"
+    done
 
 Make it executable:
-bash
 
-chmod +x scanner.sh
+    chmod +x scanner.sh
 
 Run it:
-bash
 
     ./scanner.sh
 
@@ -751,93 +749,101 @@ What It Does:
     Pings each IP and lists active hosts.
 
 # Compression and Archiving
-Objectives
 
- Master tar, gzip, bzip2 for file compression
- Create backups & forensic disk images
- Archive and restore directories
-Lessons
+**Objectives**
+
+ - Master tar, gzip, bzip2 for file compression
+ - Create backups & forensic disk images
+ - Archive and restore directories
+   
+**Lessons**
+
 1. Compression Tools
-Tool	Command	Best For
-gzip	gzip file.txt → file.txt.gz	Fast compression
-bzip2	bzip2 file.txt → file.txt.bz2	Better compression (slower)
-xz	xz file.txt → file.txt.xz	High compression (slowest)
+   
+        Tool  | Command                       | Best For
+        ___________________________________________________________________
+        gzip  | gzip file.txt → file.txt.gz   | Fast compression
+        bzip2	| bzip2 file.txt → file.txt.bz2 | Better compression (slower)
+        xz    | xz file.txt → file.txt.xz|    | High compression (slowest)
+        ______________________________________________________________________
 
 Decompression:
-bash
 
-gunzip file.txt.gz      # gzip  
-bunzip2 file.txt.bz2    # bzip2  
-unxz file.txt.xz        # xz  
+    gunzip file.txt.gz      # gzip  
+    bunzip2 file.txt.bz2    # bzip2  
+    unxz file.txt.xz        # xz  
 
 2. Archiving with tar
 
 tar bundles files into a single archive (.tar).
-Command	Description
-tar -cvf archive.tar /dir	Create archive (-create, -verbose, -file)
-tar -xvf archive.tar	Extract archive (-xtract)
-tar -tvf archive.tar	List contents (-test)
 
-🔹 Compressed Archives:
-bash
+    Command              | Description
+    _____________________________________________________________________
+    tar -cvf archive.tar | /dir	Create archive (-create, -verbose, -file)
+    tar -xvf archive.tar | Extract archive (-xtract)
+    tar -tvf archive.tar | List contents (-test)
+    _______________________________________________________________________
 
-tar -czvf backup.tar.gz /dir    # gzip  
-tar -cjvf backup.tar.bz2 /dir   # bzip2  
-tar -cJvf backup.tar.xz /dir    # xz  
+Compressed Archives:
+
+    tar -czvf backup.tar.gz /dir    # gzip  
+    tar -cjvf backup.tar.bz2 /dir   # bzip2  
+    tar -cJvf backup.tar.xz /dir    # xz  
 
 3. Creating Forensic Images
 
 Use dd for bit-for-bit copies (e.g., USB drives):
-bash
+    
+    sudo dd if=/dev/sdb of=backup.img bs=4M status=progress  
+    
+        if = Input file (e.g., /dev/sdb)
+    
+        of = Output file (e.g., backup.img)
+    
+        bs = Block size (faster with larger values)
 
-sudo dd if=/dev/sdb of=backup.img bs=4M status=progress  
-
-    if = Input file (e.g., /dev/sdb)
-
-    of = Output file (e.g., backup.img)
-
-    bs = Block size (faster with larger values)
-
-Activities
+**Activities**
 1. Archive & Restore a Directory
 
 Task:
 
-    Compress /home/kali/Documents:
-    bash
+Compress /home/kali/Documents:
 
-tar -czvf docs_backup.tar.gz /home/kali/Documents
+    tar -czvf docs_backup.tar.gz /home/kali/Documents
 
 List contents:
-bash
 
-tar -tvf docs_backup.tar.gz
+    tar -tvf docs_backup.tar.gz
 
 Restore to /tmp:
-bash
 
     tar -xzvf docs_backup.tar.gz -C /tmp
 
 Verify:
-bash
 
-ls /tmp/home/kali/Documents
+    ls /tmp/home/kali/Documents
 
-# Filesystem and Storage Management
-Objectives
+    # Filesystem and Storage Management
 
-Navigate Linux device files (/dev)
-Use lsblk, fdisk, and mount
-Check disk usage (df, du) and health (smartctl)
-Mount and explore USB drives
-Lessons
+**Objectives**
+
+- Navigate Linux device files (/dev)
+- Use lsblk, fdisk, and mount
+- Check disk usage (df, du) and health (smartctl)
+- Mount and explore USB drives
+
+**Lessons**
+
 1. Navigating /dev and Listing Devices
-Command  | Description	                          | Example
-lsblk	 | List block devices (disks, partitions) |	lsblk -f
-fdisk -l | Show partition tables	              | sudo fdisk -l
-blkid	 | List UUIDs of partitions	              | sudo blkid
 
-🔹 Key Locations:
+        Command | Description                           | Example
+        ________________________________________________________________
+        lsblk	   | List block devices (disks, partitions) |	lsblk -f
+        fdisk -l | Show partition tables	              | sudo fdisk -l
+        blkid	   | List UUIDs of partitions	              | sudo blkid
+        ________________________________________________________________
+
+Key Locations:
 
     /dev/sda → First disk
 
@@ -846,181 +852,184 @@ blkid	 | List UUIDs of partitions	              | sudo blkid
     /dev/sdb → Second disk (e.g., USB)
 
 2. Mounting and Unmounting Drives
-Mount a Filesystem
-bash
 
-sudo mkdir /mnt/usb                          # Create mount point  
-sudo mount /dev/sdb1 /mnt/usb                 # Mount partition  
+Mount a Filesystem
+
+    sudo mkdir /mnt/usb                          # Create mount point  
+    sudo mount /dev/sdb1 /mnt/usb                 # Mount partition  
 
 Unmount Safely
-bash
 
-sudo umount /mnt/usb                          # Note: Not "unmount"  
+    sudo umount /mnt/usb                          # Note: Not "unmount"  
 
-🔹 Auto-Mount at Boot:
+Auto-Mount at Boot:
 Edit /etc/fstab:
-text
 
-UUID=1234-5678 /mnt/usb ext4 defaults 0 2  
+    UUID=1234-5678 /mnt/usb ext4 defaults 0 2  
 
 3. Checking Disk Usage and Health
-Command	Description
-df -h	Show free space (-h = human-readable)
-du -sh /dir	Check directory size
-smartctl -a /dev/sda	Check disk health (requires smartmontools)
-Activities
+
+Command              | Description
+_________________________________________________________________
+df -h                | Show free space (-h = human-readable)
+du -sh /dir          | Check directory size
+smartctl -a /dev/sda | Check disk health (requires smartmontools)
+__________________________________________________________________
+
+**Activities**
 1. Mount a USB Device and View Contents
 
-✅ Task:
+Task:
 
-    Insert USB → Identify it:
-    bash
-
-lsblk  
+    lsblk
+    
 # Look for /dev/sdb1 or similar  
 
 Mount it:
-bash
 
-sudo mkdir /mnt/usb  
-sudo mount /dev/sdb1 /mnt/usb  
+    sudo mkdir /mnt/usb  
+    sudo mount /dev/sdb1 /mnt/usb  
 
 View files:
-bash
 
-ls -l /mnt/usb  
+    ls -l /mnt/usb  
 
 Unmount:
-bash
 
-sudo umount /mnt/usb  
+    sudo umount /mnt/usb  
 
 # Logging and Stealth
-Objectives
 
-Understand Linux logging systems (rsyslog, journald)
-Learn log rotation (logrotate)
-Discover stealth techniques (disabling/clearing logs)
-Practice log review and manipulation
-Lessons
+**Objectives**
+
+    Understand Linux logging systems (rsyslog, journald)
+    Learn log rotation (logrotate)
+    Discover stealth techniques (disabling/clearing logs)
+    Practice log review and manipulation
+
+**Lessons**
+
 1. Linux Logging Systems
-Key Log Files
-Log File	                | Purpose
-________________________________________________________
-/var/log/auth.log	        | Authentication (SSH, sudo)
-/var/log/syslog	            | General system activity
-/var/log/kern.log	        | Kernel messages
-/var/log/apache2/access.log	| Apache web server access
-________________________________________________________
+   
+Key Log Files:
+
+        Log File	                | Purpose
+        ________________________________________________________
+        /var/log/auth.log	        | Authentication (SSH, sudo)
+        /var/log/syslog	            | General system activity
+        /var/log/kern.log	        | Kernel messages
+        /var/log/apache2/access.log	| Apache web server access
+        ________________________________________________________
+        
 Log Management Tools
-Tool	   | Description
-___________________________________________________
-rsyslog	   | Primary logging daemon
-journalctl | View systemd logs (journalctl -u ssh)
-logrotate  | Automatically rotates/compresses logs
-_____________________________________________________
+
+    Tool	   | Description
+    ___________________________________________________
+    rsyslog	   | Primary logging daemon
+    journalctl | View systemd logs (journalctl -u ssh)
+    logrotate  | Automatically rotates/compresses logs
+    _____________________________________________________
+    
 2. Disabling & Clearing Logs
+   
 Temporarily Disable Logging
-bash
 
-# Stop rsyslog  
-sudo systemctl stop rsyslog  
+Stop rsyslog;
 
-# Stop journald (systemd)  
-sudo systemctl stop systemd-journald  
+    sudo systemctl stop rsyslog  
 
-Clear Logs (Stealth)
-bash
+Stop journald (systemd):
 
-# Clear auth.log (but leaves traces)  
-sudo echo "" > /var/log/auth.log  
+    sudo systemctl stop systemd-journald  
 
-# "Secure" deletion (shred + truncate)  
-sudo shred -zu /var/log/auth.log  
-sudo touch /var/log/auth.log  
+Clear Logs (Stealth);
+
+    # Clear auth.log (but leaves traces)  
+    sudo echo "" > /var/log/auth.log  
+
+"Secure" deletion (shred + truncate):
+
+    sudo shred -zu /var/log/auth.log  
+    sudo touch /var/log/auth.log  
 
 Disable Specific Logging
 
 Edit /etc/rsyslog.conf and comment out lines:
-text
 
-# auth.* /var/log/auth.log  
+        # auth.* /var/log/auth.log  
 
 Then restart:
-bash
 
-sudo systemctl restart rsyslog  
+        sudo systemctl restart rsyslog  
 
 3. Logrotate (Automated Log Management)
 
-Config file: /etc/logrotate.conf
+        Config file: /etc/logrotate.conf
 
 Example for /var/log/hacking.log:
-text
 
-/var/log/hacking.log {  
-  daily  
-  rotate 7  
-  compress  
-  missingok  
-  notifempty  
-}  
+
+    /var/log/hacking.log {  
+      daily  
+      rotate 7  
+      compress  
+      missingok  
+      notifempty  
+    }  
 
 Apply manually:
-bash
 
-sudo logrotate -f /etc/logrotate.conf  
+    sudo logrotate -f /etc/logrotate.conf  
 
-Activities
+**Activities**
+
 1. Review and Disable Specific Logs
 
 Task:
 
-    Check SSH logs:
-    bash
+ Check SSH logs:
 
-sudo cat /var/log/auth.log | grep sshd  
+    sudo cat /var/log/auth.log | grep sshd  
 
 Disable SSH logging:
-bash
 
-sudo nano /etc/rsyslog.d/50-default.conf  
+    sudo nano /etc/rsyslog.d/50-default.conf  
 
 Find and comment:
-text
 
-# auth.*,authpriv.* /var/log/auth.log  
+    # auth.*,authpriv.* /var/log/auth.log  
 
 Restart logging:
-bash
 
-sudo systemctl restart rsyslog  
+    sudo systemctl restart rsyslog  
 
 Verify:
-bash
 
     sudo tail -f /var/log/auth.log  # Should show no new SSH entries  
 
 # Using and Abusing Services
 Objectives
 
-✔ Manage Linux services with systemctl
-✔ Set up an Apache web server
-✔ Configure SSH for remote access
-✔ Interact with MySQL databases
-Lessons
-1. Managing Services with systemctl
-Command	                       | Description
-__________________________________________________
-sudo systemctl start apache2   | Start a service
-sudo systemctl stop apache2	   | Stop a service
-sudo systemctl restart apache2 | Restart a service
-sudo systemctl enable apache2  | Start at boot
-sudo systemctl disable apache2 | Disable at boot
-sudo systemctl status apache2  | Check status
-____________________________________________________
+- Manage Linux services with systemctl
+- Set up an Apache web server
+- Configure SSH for remote access
+- Interact with MySQL databases
 
-🔹 Key Services:
+**Lessons**
+
+1. Managing Services with systemctl
+
+        Command	                       | Description
+        __________________________________________________
+        sudo systemctl start apache2   | Start a service
+        sudo systemctl stop apache2	   | Stop a service
+        sudo systemctl restart apache2 | Restart a service
+        sudo systemctl enable apache2  | Start at boot
+        sudo systemctl disable apache2 | Disable at boot
+        sudo systemctl status apache2  | Check status
+        ____________________________________________________
+
+Key Services:
 
     apache2 → Web server
 
@@ -1029,233 +1038,218 @@ ____________________________________________________
     mysql → Database
 
 2. Apache Web Server Setup
-Install & Run Apache
-bash
 
-sudo apt install apache2  
-sudo systemctl start apache2  
+Install & Run Apache
+
+    sudo apt install apache2  
+    sudo systemctl start apache2  
 
 Test Apache
-
 Visit:
 
-http://localhost  
+    http://localhost  
 
 Or check with:
-bash
 
-curl http://localhost  
+    curl http://localhost  
 
 Host a Simple Web Page
-bash
 
-echo "Hacked by $(whoami)" | sudo tee /var/www/html/index.html  
+    echo "Hacked by $(whoami)" | sudo tee /var/www/html/index.html  
 
 3. Remote Access with SSH
+
 Enable SSH Server
-bash
 
-sudo apt install openssh-server  
-sudo systemctl start ssh  
+    sudo apt install openssh-server  
+    sudo systemctl start ssh  
 
-Connect Remotely
-bash
+Connect Remotely:
 
-ssh username@ip-address  
+    ssh username@ip-address  
 
 Harden SSH (Security)
 
 Edit /etc/ssh/sshd_config:
-text
 
-PermitRootLogin no  
-PasswordAuthentication no  # Use SSH keys  
+    PermitRootLogin no  
+    PasswordAuthentication no  # Use SSH keys  
 
 Then restart:
-bash
 
-sudo systemctl restart ssh  
+    sudo systemctl restart ssh  
 
 4. MySQL Database Access
+
 Install & Secure MySQL
-bash
 
-sudo apt install mysql-server  
-sudo mysql_secure_installation  
+    sudo apt install mysql-server  
+    sudo mysql_secure_installation  
 
-Login & Basic Commands
-bash
+Login & Basic Commands:
 
-sudo mysql -u root -p  
+    sudo mysql -u root -p  
 
-sql
+sql:
 
-SHOW DATABASES;  
-CREATE DATABASE test;  
-USE test;  
-CREATE TABLE users (id INT, name VARCHAR(20));  
+    SHOW DATABASES;  
+    CREATE DATABASE test;  
+    USE test;  
+    CREATE TABLE users (id INT, name VARCHAR(20));  
 
-Activities
+*Activities*
 1. Set Up and Monitor an Apache Server
 
-✅ Task:
+Task:
 
-    Install Apache:
-    bash
+Install Apache:
 
-sudo apt install apache2  
+    sudo apt install apache2  
 
 Start & enable it:
-bash
 
-sudo systemctl start apache2  
-sudo systemctl enable apache2  
+    sudo systemctl start apache2  
+    sudo systemctl enable apache2  
 
 Monitor access logs:
-bash
 
-sudo tail -f /var/log/apache2/access.log  
+    sudo tail -f /var/log/apache2/access.log  
 
 Test from another machine:
-bash
 
     curl http://your-server-ip  
 
 
 # Security and Anonymity
-Objectives
 
-✔ Use Tor and proxy chains for anonymity
-✔ Set up a VPN for encrypted traffic
-✔ Configure encrypted email (PGP/GPG)
-✔ Browse the web without leaving traces
-Lessons
+**Objectives**
+- Use Tor and proxy chains for anonymity
+- Set up a VPN for encrypted traffic
+- Configure encrypted email (PGP/GPG)
+- Browse the web without leaving traces
+
+**Lessons**
+
 1. Tor & Proxy Servers
-Tor (The Onion Router)
+
+3Tor (The Onion Router):
 
     Routes traffic through multiple nodes for anonymity.
 
 Install & Run Tor:
-bash
 
-sudo apt install tor  
-sudo systemctl start tor  
+    sudo apt install tor  
+    sudo systemctl start tor  
 
 Use torsocks for Anonymity:
-bash
 
-torsocks curl https://check.torproject.org  # Verify Tor exit IP  
+    torsocks curl https://check.torproject.org  # Verify Tor exit IP  
 
-ProxyChains (Route Traffic Through Proxies)
+3ProxyChains (Route Traffic Through Proxies)
 
-    Install:
-    bash
+Install:
 
-sudo apt install proxychains  
+
+    sudo apt install proxychains  
 
 Edit /etc/proxychains.conf:
-text
 
-socks5 127.0.0.1 9050  # Tor proxy  
-# or add other proxies: http 1.2.3.4 8080  
+    socks5 127.0.0.1 9050  # Tor proxy
+    or add other proxies: http 1.2.3.4 8080  
 
 Run apps through ProxyChains:
-bash
 
     proxychains nmap -sT target.com  
 
 2. VPN Basics
 
-    Encrypts all traffic and masks your IP.
+Encrypts all traffic and masks your IP.
 
 Using OpenVPN (Example):
-bash
 
-sudo apt install openvpn  
-sudo openvpn --config client.ovpn  # Connect to VPN provider  
+    sudo apt install openvpn  
+    sudo openvpn --config client.ovpn  # Connect to VPN provider  
 
-🔹 Recommended VPNs:
+Recommended VPNs:
 
     ProtonVPN (Free tier available)
 
     Mullvad (No logs, anonymous accounts)
 
 3. Encrypted Email (PGP/GPG)
-Install GPG
-bash
 
-sudo apt install gnupg  
+Install GPG:
 
-Generate a Key Pair
-bash
+    sudo apt install gnupg  
 
-gpg --full-generate-key  # Follow prompts (RSA, 4096-bit recommended)  
+Generate a Key Pair:
+
+    gpg --full-generate-key  # Follow prompts (RSA, 4096-bit recommended)  
 
 Encrypt/Decrypt Emails
-bash
 
-gpg --encrypt --recipient "user@example.com" message.txt  
-gpg --decrypt message.txt.gpg  
+    gpg --encrypt --recipient "user@example.com" message.txt  
+    gpg --decrypt message.txt.gpg  
 
-🔹 Use with Thunderbird:
+Use with Thunderbird:
 
     Install Enigmail add-on for PGP in emails.
 
-Activities
+**Activities**
+
 1. Configure Proxy Settings & Browse Anonymously
 
-✅ Task:
+Task:
 
-    Install Tor & Privoxy (HTTP-to-SOCKS proxy):
-    bash
+Install Tor & Privoxy (HTTP-to-SOCKS proxy):
 
     sudo apt install tor privoxy  
 
-    Configure Firefox for Tor:
+Configure Firefox for Tor:
 
-        Go to about:preferences → Network Settings
+    Go to about:preferences → Network Settings
 
-        Set Manual Proxy:
+Set Manual Proxy:
 
             SOCKS Host: 127.0.0.1, Port: 9050
 
             Check "Proxy DNS when using SOCKS"
 
-    Verify Anonymity:
+Verify Anonymity:
 
         Visit https://check.torproject.org
 
         Check IP at https://whatismyipaddress.com
 
-🔹 Alternative: Use the Tor Browser for full anonymity.
+Alternative: Use the Tor Browser for full anonymity.
 
 
 # Wireless Networks
-Objectives
 
-✔ Discover and analyze Wi-Fi networks
-✔ Use aircrack-ng for WPA/WPA2 cracking
-✔ Perform Bluetooth reconnaissance
-✔ Capture a WPA handshake for offline cracking
-Lessons
-1. Wi-Fi Scanning & Cracking (aircrack-ng)
+**Objectives**
+
+- Discover and analyze Wi-Fi networks
+- Use aircrack-ng for WPA/WPA2 cracking
+- Perform Bluetooth reconnaissance
+- Capture a WPA handshake for offline cracking
+  
+**Lessons**
+
+## 1. Wi-Fi Scanning & Cracking (aircrack-ng)
+
 Step 1: Enable Monitor Mode
-bash
 
-sudo airmon-ng check kill   # Kill interfering processes  
-sudo airmon-ng start wlan0  # Enable monitor mode (creates wlan0mon)  
+    sudo airmon-ng check kill   # Kill interfering processes  
+    sudo airmon-ng start wlan0  # Enable monitor mode (creates wlan0mon)  
 
 Step 2: Scan for Networks
-bash
 
-sudo airodump-ng wlan0mon  
-
+    sudo airodump-ng wlan0mon  
     Lists BSSID (MAC), channel, encryption type (WEP/WPA/WPA2).
 
 Step 3: Capture Handshake
-bash
 
-sudo airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon  
+    sudo airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon  
 
     -c 6 → Channel
 
@@ -1264,9 +1258,8 @@ sudo airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon
     -w capture → Save to file
 
 Step 4: Force Handshake (Deauth Attack)
-bash
 
-sudo aireplay-ng -0 4 -a 00:11:22:33:44:55 -c AA:BB:CC:DD:EE:FF wlan0mon  
+    sudo aireplay-ng -0 4 -a 00:11:22:33:44:55 -c AA:BB:CC:DD:EE:FF wlan0mon  
 
     -0 4 → Send 4 deauth packets
 
@@ -1275,277 +1268,256 @@ sudo aireplay-ng -0 4 -a 00:11:22:33:44:55 -c AA:BB:CC:DD:EE:FF wlan0mon
     -c → Client MAC
 
 Step 5: Crack Handshake
-bash
 
-sudo aircrack-ng -w rockyou.txt capture-01.cap  
+    sudo aircrack-ng -w rockyou.txt capture-01.cap  
 
     Uses wordlist (rockyou.txt) to crack the password.
 
-2. Bluetooth Reconnaissance
-Scan for Devices
-bash
+## 2. Bluetooth Reconnaissance
+   
+Scan for Devices:
 
-sudo hcitool scan  
+    sudo hcitool scan  
 
-Deeper Scan (L2Ping)
-bash
+Deeper Scan (L2Ping):
 
-sudo l2ping -c 4 AA:BB:CC:DD:EE:FF  
+    sudo l2ping -c 4 AA:BB:CC:DD:EE:FF  
 
 Bluetooth Sniffing (Ubertooth)
-bash
 
-ubertooth-btle -f -r capture.pcap  
+    ubertooth-btle -f -r capture.pcap  
 
-Activities
+**Activities**
+
 1. Capture a WPA Handshake
 
-✅ Task:
+Task:
 
-    Put your Wi-Fi card in monitor mode:
-    bash
+Put your Wi-Fi card in monitor mode:
 
-sudo airmon-ng start wlan0  
+    sudo airmon-ng start wlan0  
 
 Scan for networks:
-bash
 
-sudo airodump-ng wlan0mon  
+    sudo airodump-ng wlan0mon  
 
 Target a network and capture handshake:
-bash
 
-sudo airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon  
+    sudo airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon  
 
 Force a handshake (deauth attack):
-bash
 
-sudo aireplay-ng -0 4 -a 00:11:22:33:44:55 -c AA:BB:CC:DD:EE:FF wlan0mon  
+    sudo aireplay-ng -0 4 -a 00:11:22:33:44:55 -c AA:BB:CC:DD:EE:FF wlan0mon  
 
 Verify capture:
 
     Look for "WPA handshake" in airodump-ng output.
 
 #  Linux Kernel and Modules
-Objectives
 
-✔ Explore Linux kernel modules (lsmod, modprobe)
-✔ Tune kernel parameters (sysctl)
-✔ Load and unload modules dynamically
-✔ Disable a kernel module for security
-Lessons
+**Objectives**
+
+- Explore Linux kernel modules (lsmod, modprobe)
+- Tune kernel parameters (sysctl)
+- Load and unload modules dynamically
+- Disable a kernel module for security
+
+**Lessons**
+
 1. Kernel Modules Basics
-List Loaded Modules
-bash
 
-lsmod  # Shows currently loaded modules  
+List Loaded Modules:
 
-Module Information
-bash
+    lsmod  # Shows currently loaded modules  
 
-modinfo <module_name>  # e.g., `modinfo e1000`  
+Module Information:
 
-Load/Unload Modules
-bash
+    modinfo <module_name>  # e.g., `modinfo e1000`  
 
-sudo modprobe <module_name>      # Load  
-sudo modprobe -r <module_name>   # Unload  
+Load/Unload Modules:
 
-🔹 Manual Loading (Avoid Unless Necessary):
-bash
+    sudo modprobe <module_name>      # Load  
+    sudo modprobe -r <module_name>   # Unload  
 
-sudo insmod /path/to/module.ko   # Load  
-sudo rmmod <module_name>         # Unload  
+Manual Loading (Avoid Unless Necessary):
+  
+    sudo insmod /path/to/module.ko   # Load  
+    sudo rmmod <module_name>         # Unload  
 
 2. Kernel Tuning with sysctl
+
 View Current Settings
-bash
 
-sysctl -a  # List all parameters  
+    sysctl -a  # List all parameters  
 
-Change Parameters Temporarily
-bash
+Change Parameters Temporarily:
 
-sudo sysctl -w kernel.your.parameter=value  
+    sudo sysctl -w kernel.your.parameter=value  
 
-Make Changes Permanent
+Make Changes Permanent:
 
-Edit /etc/sysctl.conf and add:
-text
+    Edit /etc/sysctl.conf and add:
 
-kernel.your.parameter = value  
+    kernel.your.parameter = value  
 
 Then apply:
-bash
 
-sudo sysctl -p  
+    sudo sysctl -p  
 
-🔹 Example (Disable ICMP Ping):
-bash
+Example (Disable ICMP Ping):
 
-sudo sysctl -w net.ipv4.icmp_echo_ignore_all=1  
+    sudo sysctl -w net.ipv4.icmp_echo_ignore_all=1  
 
 3. Blacklisting Modules
 
 Prevent a module from loading at boot:
 
     Edit /etc/modprobe.d/blacklist.conf:
-    text
-
-blacklist <module_name>  
+    
+    blacklist <module_name>  
 
 Update initramfs:
-bash
 
     sudo update-initramfs -u  
 
-Activities
+**Activities**
+
 1. Disable a Kernel Module
 
-✅ Task:
+Task:
 
-    Identify a non-critical module (e.g., floppy):
-    bash
+Identify a non-critical module (e.g., floppy):
 
-lsmod | grep floppy  
+    lsmod | grep floppy  
 
 Unload it:
-bash
 
-sudo modprobe -r floppy  
+    sudo modprobe -r floppy  
 
 Blacklist it permanently:
-bash
 
-echo "blacklist floppy" | sudo tee -a /etc/modprobe.d/blacklist.conf  
-sudo update-initramfs -u  
+    echo "blacklist floppy" | sudo tee -a /etc/modprobe.d/blacklist.conf  
+    sudo update-initramfs -u  
 
 Reboot and verify:
-bash
 
-lsmod | grep floppy  # Should show nothing  
+    lsmod | grep floppy  # Should show nothing  
 
 # Automating Tasks
-Objectives
 
-✔ Automate tasks using cron
-✔ Schedule scripts with crontab
-✔ Configure startup jobs (rc.local, systemd)
-Lessons
+**Objectives**
+
+- Automate tasks using cron
+- Schedule scripts with crontab
+- Configure startup jobs (rc.local, systemd)
+
+**Lessons**
 1. Cron Jobs (crontab)
-Edit User's Crontab
-bash
+   
+Edit User's Crontab:
 
-crontab -e  # Opens the cron file in default editor  
+    crontab -e  # Opens the cron file in default editor  
 
-Cron Syntax
-text
+Cron Syntax:
 
-* * * * * /path/to/command  
-│ │ │ │ │  
-│ │ │ │ └── Day of week (0-7, 0=Sunday)  
-│ │ │ └──── Month (1-12)  
-│ │ └────── Day of month (1-31)  
-│ └──────── Hour (0-23)  
-└────────── Minute (0-59)  
+    * * * * * /path/to/command  
+    │ │ │ │ │  
+    │ │ │ │ └── Day of week (0-7, 0=Sunday)  
+    │ │ │ └──── Month (1-12)  
+    │ │ └────── Day of month (1-31)  
+    │ └──────── Hour (0-23)  
+    └────────── Minute (0-59)  
 
 Examples
-Schedule	| Command	           | Purpose
-__________________________________________________________
-0 3 * * *   | /backup.sh	       | Daily backup at 3 AM
-*/5 * * * *	| ping -c 1 google.com | Ping every 5 mins
-@reboot	    | /startup.sh	       | Run at system boot
-___________________________________________________________
 
-🔹 View Active Cron Jobs:
-bash
+    Schedule	| Command	           | Purpose
+    __________________________________________________________
+    0 3 * * *   | /backup.sh	       | Daily backup at 3 AM
+    */5 * * * *	| ping -c 1 google.com | Ping every 5 mins
+    @reboot	    | /startup.sh	       | Run at system boot
+    ___________________________________________________________
 
-crontab -l  
+View Active Cron Jobs:
+
+    crontab -l  
 
 2. Startup Jobs (rc.local & systemd)
+   
 Legacy: /etc/rc.local
 
-    Edit the file:
-    bash
+ Edit the file:
 
-sudo nano /etc/rc.local  
+    sudo nano /etc/rc.local  
 
 Add commands before exit 0:
-bash
 
-/home/user/startup.sh &  
+    /home/user/startup.sh &  
 
 Make it executable:
-bash
 
     sudo chmod +x /etc/rc.local  
 
 Modern: systemd Service
 
-    Create a service file:
-    bash
-
-sudo nano /etc/systemd/system/myscript.service  
+Create a service file:
+    sudo nano /etc/systemd/system/myscript.service  
 
 Add:
-text
 
-[Unit]  
-Description=My Startup Script  
 
-[Service]  
-ExecStart=/home/user/startup.sh  
+    [Unit]  
+    Description=My Startup Script  
 
-[Install]  
-WantedBy=multi-user.target  
+    [Service]  
+    ExecStart=/home/user/startup.sh  
+
+    [Install]  
+    WantedBy=multi-user.target  
 
 Enable & start:
-bash
 
     sudo systemctl enable myscript  
     sudo systemctl start myscript  
 
-Activities
+**Activities**
+
 1. Schedule a Script to Run Daily
 
-✅ Task:
+Task:
 
-    Create a script (/home/user/daily_task.sh):
-    bash
+Create a script (/home/user/daily_task.sh):
 
-#!/bin/bash  
-echo "Daily task run at $(date)" >> /home/user/cron_log.txt  
+    #!/bin/bash  
+    echo "Daily task run at $(date)" >> /home/user/cron_log.txt  
 
 Make it executable:
-bash
 
-chmod +x /home/user/daily_task.sh  
+    chmod +x /home/user/daily_task.sh  
 
 Schedule it to run every day at 2 AM:
-bash
 
-crontab -e  
+    crontab -e  
 
 Add:
-text
 
     0 2 * * * /home/user/daily_task.sh  
 
-🔹 Verify:
-bash
+Verify:
 
-tail -f /home/user/cron_log.txt  # Check after 2 AM  
+    tail -f /home/user/cron_log.txt  # Check after 2 AM  
 
 # Python Scripting for Hackers
-Objectives
+**Objectives**
 
-✔ Learn Python basics for security automation
-✔ Build TCP clients/servers for networking tasks
-✔ Create a password cracker (dictionary attack)
-✔ Write a port scanner with banner grabbing
-Lessons
-1. Python Basics
-Variables & Loops
+- Learn Python basics for security automation
+- Build TCP clients/servers for networking tasks
+- Create a password cracker (dictionary attack)
+- Write a port scanner with banner grabbing
+
+**Lessons**
+## 1. Python Basics
+
+Variables & Loops:
 ```python
 
 # Variables  
@@ -1566,9 +1538,9 @@ def scan_port(ip, port):
     except:  
         pass  
 ```
-2. Networking (TCP Clients & Listeners)
+## 2. Networking (TCP Clients & Listeners)
 
-- TCP Client (Port Scanner)
+TCP Client (Port Scanner):
 
 ```python
 
@@ -1584,7 +1556,7 @@ for port in range(1, 100):
         print(f"Port {port} is open")  
     sock.close()  
 ```
-- TCP Listener (Backdoor Shell)
+TCP Listener (Backdoor Shell):
 
 ```python
 
@@ -1620,12 +1592,12 @@ def crack_hash(hash, wordlist):
 
 print(crack_hash("5f4dcc3b5aa765d61d8327deb882cf99", "rockyou.txt"))  
 ```
-Activities
+**Activities**
 1. Write a Port Scanner with Banner Grabbing
 
 Task:
 
-    Create port_scanner.py:
+Create port_scanner.py:
 
 ```python
 
@@ -1653,16 +1625,19 @@ for port in [21, 22, 80, 443]:
 python3 port_scanner.py  
 ```
 # Ruby Scripting for Hackers
-Objectives
 
-Learn Ruby basics for security automation
-Build TCP clients/servers for networking tasks
-Create a password cracker (dictionary attack)
-Write a port scanner with banner grabbing
+**Objectives**
 
-Lessons
-1. Ruby Basics
-Variables & Loops
+- Learn Ruby basics for security automation
+- Build TCP clients/servers for networking tasks
+- Create a password cracker (dictionary attack)
+- Write a port scanner with banner grabbing
+
+**Lessons**
+
+## 1. Ruby Basics
+
+Variables & Loops:
 ```ruby
 
 #_Variables_  
@@ -1686,9 +1661,9 @@ def scan_port(ip, port)
   end  
 end  
 ```
-2. Networking (TCP Clients & Listeners)
+## 2. Networking (TCP Clients & Listeners)
 
-TCP Client (Port Scanner)
+TCP Client (Port Scanner):
 ```ruby
 
 require 'socket'  
@@ -1771,10 +1746,8 @@ end
 target = "192.168.1.1"  
 [21, 22, 80, 443].each { |p| scan_port(target, p) }  
 
-    Run it:
 ```
+run it:
 
-```bash
+    ruby port_scanner.rb
 
-ruby port_scanner.rb
-```  
