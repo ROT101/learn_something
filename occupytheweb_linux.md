@@ -1,4 +1,5 @@
 # Getting Started with Linux
+
 **Objectives**
 
 - Understand why Linux is essential for cybersecurity and ethical hacking
@@ -7,6 +8,7 @@
 - Navigate the Linux filesystem structure
   
 **Lessons**
+
 ## 1. Why Hackers Use Linux
 
  Open-source: Full control over the OS.
@@ -55,9 +57,9 @@ Step 3: Import Kali into VirtualBox
 
 1. Set Up Kali Linux in a Virtual Machine
 
-- Task
+Task:
 
-Download & install VirtualBox.
+Download & install VirtualBox:
 
     Import Kali Linux VM.
     Log in and update the system:
@@ -68,24 +70,25 @@ Download & install VirtualBox.
 Task:
 
     Open terminal (Ctrl + Alt + T).
-
     Run:
-    bash
 
-    pwd         # Check current location  
-    ls          # List files  
-    cd /etc     # Navigate to /etc  
-    ls          # See config files  
-    cat issue   # Display OS info  
-    cd ~        # Return home  
+      pwd         # Check current location  
+      ls          # List files  
+      cd /etc     # Navigate to /etc  
+      ls          # See config files  
+      cat issue   # Display OS info  
+      cd ~        # Return home  
 
 # Text Manipulation in Linux
+
 **Objectives**
+
 - Master command-line text processing tools (head, tail, grep, sed, less)
 - Learn to search, filter, and modify text files efficiently
 - Complete a Hacker Challenge to apply skills
 
 **Lessons**
+
 ## 1. Viewing Files (head, tail, nl)
 
     Command	| Description	                   | Example
@@ -95,7 +98,7 @@ Task:
     nl	     | Display file with line numbers	| nl /etc/passwd
     ________________________________________________________________________
 
-- Bonus:
+Bonus:
 
       tail -f → Live tracking (great for logs).
   
@@ -182,6 +185,7 @@ Solution:
 **Lessons**
 
 ## 1. Network Interface Tools
+
 ifconfig (Legacy) vs. ip (Modern)
 
       Command	 | Description                   | Example
@@ -191,7 +195,7 @@ ifconfig (Legacy) vs. ip (Modern)
       iwconfig | Configure wireless interfaces | iwconfig wlan0
       __________________________________________________________
 
-- Key Uses
+Key Uses:
   
       Check IP, MAC, and interface status.
   
@@ -205,7 +209,7 @@ ifconfig (Legacy) vs. ip (Modern)
     nslookup | Simple DNS lookups	  | nslookup example.com
     _______________________________________________________
 
-- Find DNS Records:
+Find DNS Records:
 
       dig google.com MX      # Get mail servers  
       nslookup -type=AAAA google.com  # IPv6 lookup  
@@ -236,15 +240,13 @@ Spoof MAC Address
 
 Task:
 
-    Check current IP:
-    bash
+Check current IP:
 
     ip addr show eth0
     #Assign a new IP (e.g., 192.168.1.150):
     sudo ip addr add 192.168.1.150/24 dev eth0
 
 Verify:
-bash
 
     ping 192.168.1.150
 
@@ -252,33 +254,32 @@ bash
 
 Task:
 
-    Find your current MAC:
-    bash
+Find your current MAC:
 
-ifconfig eth0 | grep ether
+    ifconfig eth0 | grep ether
 
 Change it to 00:12:34:56:78:90:
-bash
 
-sudo ifconfig eth0 down  
-sudo ifconfig eth0 hw ether 00:12:34:56:78:90  
-sudo ifconfig eth0 up  
+    sudo ifconfig eth0 down  
+    sudo ifconfig eth0 hw ether 00:12:34:56:78:90  
+    sudo ifconfig eth0 up  
 
 Verify:
-bash
 
     ifconfig eth0 | grep ether
 
 
 # Managing Software in Kali Linux
-Objectives
 
-  Master package management with apt
-  Learn to add software repositories
-  Install tools from GitHub and GUI installers
-  Set up essential hacking tools
+**Objectives**
+
+-  Master package management with apt
+- Learn to add software repositories
+- Install tools from GitHub and GUI installers
+- Set up essential hacking tools
   
 **Lessons**
+
 ## 1. Using apt for Package Management
 
 apt (Advanced Package Tool) is Kali’s default package manager.
@@ -297,16 +298,14 @@ ________________________________________________________________________________
 ## 2. Adding Software Repositories
 
 Sometimes tools aren’t in Kali’s default repos.
-Adding a Repo
+Adding a Repo:
 
- Edit /etc/apt/sources.list:
-
+    Edit /etc/apt/sources.list
     sudo nano /etc/apt/sources.list
 
 Add a new line (e.g., for Google Chrome):
-text
 
-deb http://dl.google.com/linux/chrome/deb/ stable main
+    deb http://dl.google.com/linux/chrome/deb/ stable main
 
 Add the repo’s GPG key:
 
@@ -318,14 +317,14 @@ Update & install:
     sudo apt update && sudo apt install google-chrome-stable
 
 ## 3. Installing from Git and GUIs
-Git Installations (Manual Compilation)
+
+Git Installations (Manual Compilation):
 
     git clone https://github.com/toolname/tool.git
 
 Install dependencies:
-bash
 
-sudo apt install build-essential libssl-dev
+    sudo apt install build-essential libssl-dev
 
 Compile & install:
 
@@ -345,7 +344,8 @@ GUI Installers (.deb, .run)
     chmod +x installer.sh  
     ./installer.sh  
 
-Activities
+**Activities**
+
 1. Install Key Hacking Tools
 
 Task: Install the following using different methods:
@@ -387,13 +387,11 @@ Method 3: .deb Package (GUI Installer)
         sudo usermod | Modify user groups	    | sudo usermod -aG sudo bob
         ____________________________________________________________________
 
-- Key Files
+Key Files:
 
-      /etc/passwd → User accounts
-  
-      /etc/group → Group definitions
-  
-      /etc/shadow → Encrypted passwords
+    /etc/passwd → User accounts
+    /etc/group → Group definitions
+    /etc/shadow → Encrypted passwords
 
 ## 2. Changing Ownership & Permissions
 
