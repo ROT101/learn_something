@@ -3,8 +3,8 @@
 
 
 **Theory** \
- [networking](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) \
  [linux](https://github.com/ROT101/learn_something/blob/main/occupytheweb_linux.md) \
+ [networking](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) \
  [regex](https://github.com/ROT101/learn_something/blob/main/skill_development/regex.md) \
  [programing]() \
  [research]() 
