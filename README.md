@@ -3,8 +3,11 @@
 
 
 **Theory** \
- [network basics](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) \
- [linux basis](https://github.com/ROT101/learn_something/blob/main/occupytheweb_linux.md)
+ [networking](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) \
+ [linux](https://github.com/ROT101/learn_something/blob/main/occupytheweb_linux.md) \
+ [regex](https://github.com/ROT101/learn_something/blob/main/skill_development/regex.md) \
+ [programing]() \
+ [research]() \
 
  # virtualbox installation
 
