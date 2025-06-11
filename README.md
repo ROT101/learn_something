@@ -50,9 +50,9 @@ alternative
 - [youtube 2](https://www.youtube.com/watch?v=tvNKp1QXV_8)
 
 # scripting projects 
-[bash](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
+[bash](https://github.com/ROT101/learn_something/tree/main/bash)
 
-[ruby](https://github.com/ROT101/learn_something/tree/main/bash_scripting)
+[ruby](https://github.com/ROT101/learn_something/tree/main/ruby)
 
 [python](https://github.com/ROT101/learn_something/tree/main/ai_py_script)
 
