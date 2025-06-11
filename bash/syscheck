@@ -19,17 +19,6 @@ echo "Checking Disk Space..." | tee -a "$LOGFILE"
 DISK_USAGE=$(df -h / | awk 'NR==2{print $5}')
 echo "Disk Usage: $DISK_USAGE" | tee -a "$LOGFILE"
 
-# Check Running Services
-SERVICES=("tor" "psql" "ssh" "NetworkManager" "postgresql")  # Modify as needed
-echo "Checking Running Services..." | tee -a "$LOGFILE"
-for service in "${SERVICES[@]}"; do
-    if systemctl is-active --quiet  "$service"; then
-        echo "$service is running." | tee -a "$LOGFILE"
-    else
-        echo "$service is down!" | tee -a "$LOGFILE"
-    fi
-done
-
 # Completion message
 echo "System Health Check completed: $(date)" | tee -a "$LOGFILE"
 
