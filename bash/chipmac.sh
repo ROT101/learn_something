@@ -36,7 +36,7 @@ check_command "macchanger -r $1"
 # Bring the network interface up
 echo "Bringing up the network interface..."
 ifconfig $1 up
-check_command "ifconfig wlan0 up"
+check_command "ifconfig $1 up"
 
 echo "All commands executed successfully!"
 
