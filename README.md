@@ -54,5 +54,5 @@ alternative
 
 [ruby](https://github.com/ROT101/learn_something/tree/main/ruby)
 
-[python](https://github.com/ROT101/learn_something/tree/main/ai_py_script)
+[python](https://github.com/ROT101/learn_something/tree/main/python)
 
