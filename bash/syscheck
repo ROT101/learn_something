@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Define log file
+LOGFILE="/var/log/system_health.log"
+echo "System Health Check started: $(date)" | tee -a "$LOGFILE"
+
+# Check CPU usage
+echo "Checking CPU usage..." | tee -a "$LOGFILE"
+CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
+echo "CPU Usage: $CPU_USAGE%" | tee -a "$LOGFILE"
+
+# Check Memory usage
+echo "Checking Memory usage..." | tee -a "$LOGFILE"
+MEMORY_USAGE=$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')
+echo "Memory Usage: $MEMORY_USAGE" | tee -a "$LOGFILE"
+
+# Check Disk Space
+echo "Checking Disk Space..." | tee -a "$LOGFILE"
+DISK_USAGE=$(df -h / | awk 'NR==2{print $5}')
+echo "Disk Usage: $DISK_USAGE" | tee -a "$LOGFILE"
+
+# Check Running Services
+SERVICES=("tor" "psql" "ssh" "NetworkManager" "postgresql")  # Modify as needed
+echo "Checking Running Services..." | tee -a "$LOGFILE"
+for service in "${SERVICES[@]}"; do
+    if systemctl is-active --quiet  "$service"; then
+        echo "$service is running." | tee -a "$LOGFILE"
+    else
+        echo "$service is down!" | tee -a "$LOGFILE"
+    fi
+done
+
+# Completion message
+echo "System Health Check completed: $(date)" | tee -a "$LOGFILE"
+
+exit 0
