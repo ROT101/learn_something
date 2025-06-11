@@ -1647,8 +1647,6 @@ target = "192.168.1.1"
 end  
 
 #_Functions_
-ruby
-
 def scan_port(ip, port)  
   begin  
     socket = Socket.new(:INET, :STREAM)  
