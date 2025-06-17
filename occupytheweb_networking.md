@@ -12,23 +12,39 @@
 
 ## 2. Types of Networks
 
-    LAN (Local Area Network): Covers a small geographic area (home, office, school)
+LAN (Local Area Network):
+    
+    Covers a small geographic area (home, office, school)
 
-    WAN (Wide Area Network): Spans large distances (the Internet, corporate networks across locations)
+WAN (Wide Area Network):
+    
+    Spans large distances (the Internet, corporate networks across locations)
 
-    PAN (Personal Area Network): Very small network (Bluetooth devices, USB connections)
+PAN (Personal Area Network):
+    
+    Very small network (Bluetooth devices, USB connections)
 
-    MAN (Metropolitan Area Network): City-wide network (campus networks, city WiFi)
+MAN (Metropolitan Area Network):
+    
+    City-wide network (campus networks, city WiFi)
 
-    WLAN (Wireless LAN): Wireless version of LAN (WiFi networks)
+WLAN (Wireless LAN):
+    
+    Wireless version of LAN (WiFi networks)
 
 ## 3. Hosts, Nodes, NICs
 
-    Host: Any device connected to a network that provides or consumes services
+ Host:
+    
+    Any device connected to a network that provides or consumes services
 
-    Node: Any device connected to a network (routers, switches, computers)
+Node:
+    
+    Any device connected to a network (routers, switches, computers)
 
-    NIC (Network Interface Card): Hardware component that connects a device to a network
+NIC (Network Interface Card):
+    
+    Hardware component that connects a device to a network
 
 ## 4. MAC vs IP Address
 
@@ -52,9 +68,14 @@ IP Address:
 
 ## 5. Introduction to ARP and DHCP
 
-    ARP (Address Resolution Protocol): Maps IP addresses to MAC addresses
+ARP (Address Resolution Protocol):
+    
+    Maps IP addresses to MAC addresses
 
-    DHCP (Dynamic Host Configuration Protocol): Automatically assigns IP addresses to devices on a network
+DHCP (Dynamic Host Configuration Protocol):
+    
+    Automatically assigns IP addresses to devices on a network
+
 ---------------
 **Activities**
 
@@ -104,22 +125,26 @@ linux
 
 The Open Systems Interconnection (OSI) model is a conceptual framework that standardizes network functions into 7 layers:
 
-        Layer |	Name	   Function	                                     | Example Protocols & Devices
+        Layer |	Name         | Function                                         | Example Protocols & Devices
         _______________________________________________________________________________________________
-        7	  | Application	User interface, network services	         | HTTP, FTP, SMTP, DNS 
-        6	  | Presentation	Data translation, encryption	         | SSL/TLS, JPEG, MPEG
-        5	  | Session	Establishes, manages, and terminates connections | NetBIOS, RPC
-        4	  | Transport	End-to-end communication, error recovery	 | TCP, UDP
-        3	  | Network	Logical addressing, routing	                     | IP, ICMP, Routers
-        2	  | Data Link	Physical addressing (MAC), error detection	 | Ethernet, Switches, MAC
-        1	  | Physical	Raw bit transmission over a medium	         | Cables, Hubs, Repeaters
+        7	  | Application  |User interface, network services                  | HTTP, FTP, SMTP, DNS 
+        6	  | Presentation |Data translation, encryption                      | SSL/TLS, JPEG, MPEG
+        5	  | Session      | Establishes, manages, and terminates connections | NetBIOS, RPC
+        4	  | Transport    | End-to-end communication, error recovery         | TCP, UDP
+        3	  | Network      | Logical addressing, routing                      | IP, ICMP, Routers
+        2	  | Data Link    | Physical addressing (MAC), error detection       | Ethernet, Switches, MAC
+        1	  | Physical     | Raw bit transmission over a medium               | Cables, Hubs, Repeaters
         ________________________________________________________________________________________________
 
 **Data Flow:**
 
-    Encapsulation (Sender): Data moves down the layers (Application → Physical).
+Encapsulation (Sender):
+    
+    Data moves down the layers (Application → Physical).
 
-    Decapsulation (Receiver): Data moves up the layers (Physical → Application).
+Decapsulation (Receiver):
+    
+    Data moves up the layers (Physical → Application).
 
 ## 2. The TCP/IP Model
 
@@ -128,9 +153,9 @@ The TCP/IP model is a simplified version used in real-world networking:
         TCP/IP Layer   | OSI Equivalent                                  | Key Protocols
         ________________________________________________________________________________________
         Application	   | Layers 5-7 (Session, Presentation, Application) | HTTP, FTP, DNS, SMTP
-        Transport	   | Layer 4 (Transport)	                         | TCP, UDP
-        Internet	   | Layer 3 (Network)	                             | IP, ICMP, ARP
-        Network Access | Layers 1-2 (Physical + Data Link)	             | Ethernet, Wi-Fi, MAC
+        Transport      | Layer 4 (Transport)                             | TCP, UDP
+        Internet	   | Layer 3 (Network)                               | IP, ICMP, ARP
+        Network Access | Layers 1-2 (Physical + Data Link)               | Ethernet, Wi-Fi, MAC
         ___________________________________________________________________________________________
 
 **Key Differences from OSI:**
@@ -145,15 +170,23 @@ The TCP/IP model is a simplified version used in real-world networking:
 
         Example: HTTP → TCP → IP → Ethernet
 
-    Protocol Examples:
+Protocol Examples:
 
-        Application: HTTP (web), FTP (file transfer), SMTP (email)
+Application:
+        
+    HTTP (web), FTP (file transfer), SMTP (email)
 
-        Transport: TCP (reliable), UDP (fast, connectionless)
+Transport:
+    
+    TCP (reliable), UDP (fast, connectionless)
 
-        Internet: IP (routing), ICMP (ping)
+Internet:
+    
+    IP (routing), ICMP (ping)
 
-        Network Access: Ethernet (LAN), Wi-Fi (wireless)
+Network Access:
+    
+    Ethernet (LAN), Wi-Fi (wireless)
 
 **Activities**
 1. Memorize the OSI Model (Mnemonic Devices)
@@ -205,15 +238,21 @@ The TCP/IP model is a simplified version used in real-world networking:
 **Lessons**
 ## 1. IPv4 Addressing Structure
 
-    IPv4 Address: A 32-bit address written in dotted-decimal notation (e.g., 192.168.1.1).
+IPv4 Address:
+    
+    A 32-bit address written in dotted-decimal notation (e.g., 192.168.1.1).
 
-    Parts of an IP Address:
+Parts of an IP Address:
 
-        Network Portion: Identifies the network.
+Network Portion:
+        
+    Identifies the network.
 
-        Host Portion: Identifies the device on the network.
+Host Portion:
+        
+    Identifies the device on the network.
 
-    Default Subnet Masks:
+Default Subnet Masks:
 
         Class A: 255.0.0.0 (e.g., 10.0.0.1)
 
@@ -223,9 +262,13 @@ The TCP/IP model is a simplified version used in real-world networking:
 
 **Special Addresses:**
 
-    Loopback: 127.0.0.1 (tests local network stack)
+Loopback:
+    
+    127.0.0.1 (tests local network stack)
 
-    APIPA (Automatic Private IP): 169.254.x.x (when DHCP fails)
+APIPA (Automatic Private IP):
+    
+    169.254.x.x (when DHCP fails)
 
 ## 2. Private vs. Public IPs
         Private IPs (Non-Routable) | Public IPs (Routable on Internet)
@@ -239,60 +282,66 @@ The TCP/IP model is a simplified version used in real-world networking:
 
 ## 3. Subnetting and CIDR
 
-        🔹 Subnetting = Dividing a network into smaller sub-networks.
-        🔹 CIDR (Classless Inter-Domain Routing) = Represents subnet masks concisely (e.g., /24 = 255.255.255.0).
+    Subnetting = Dividing a network into smaller sub-networks.
+    CIDR (Classless Inter-Domain Routing) = Represents subnet masks concisely (e.g., /24 = 255.255.255.0).
 
-**Example:**
+Example:
 
     192.168.1.0/24 →
 
-        Subnet Mask: 255.255.255.0
+Subnet Mask:
+    
+    255.255.255.0
 
-        Usable Hosts: 192.168.1.1 to 192.168.1.254 (254 hosts)
+Usable Hosts:
+    
+    192.168.1.1 to 192.168.1.254 (254 hosts)
 
 **Subnetting Exercise:**
 
     Given 192.168.1.0/24, divide into 4 subnets:
 
-        New subnet mask: 255.255.255.192 (/26)
+New subnet mask:
+        
+    255.255.255.192 (/26)
 
-        Subnets:
+Subnets:
 
-            192.168.1.0/26 (Hosts: 1-62)
+        192.168.1.0/26 (Hosts: 1-62)
 
-            192.168.1.64/26 (Hosts: 65-126)
+        192.168.1.64/26 (Hosts: 65-126)
 
-            192.168.1.128/26 (Hosts: 129-190)
+        192.168.1.128/26 (Hosts: 129-190)
 
-            192.168.1.192/26 (Hosts: 193-254)
+        192.168.1.192/26 (Hosts: 193-254)
 
 **4. NAT and DHCP**
 
-- NAT (Network Address Translation):
+NAT (Network Address Translation):
 
     Converts private IPs to a public IP for Internet access.
 
-    Types:
+Types:
 
-        Static NAT (1 private → 1 public)
+    Static NAT (1 private → 1 public)
 
-        Dynamic NAT (pool of public IPs)
+    Dynamic NAT (pool of public IPs)
 
-        PAT (Port Address Translation) (Many private → 1 public, using ports)
+    PAT (Port Address Translation) (Many private → 1 public, using ports)
 
-- DHCP (Dynamic Host Configuration Protocol):
+ DHCP (Dynamic Host Configuration Protocol):
 
     Automatically assigns IP addresses to devices.
 
-    Process (DORA):
+Process (DORA):
 
-        Discover (Client sends DHCP Discover)
+    Discover (Client sends DHCP Discover)
 
-        Offer (Server responds with an IP offer)
+    Offer (Server responds with an IP offer)
 
-        Request (Client requests the offered IP)
+    Request (Client requests the offered IP)
 
-        Acknowledge (Server confirms the lease)
+    Acknowledge (Server confirms the lease)
 
 Activities
 1. Subnetting Exercises
@@ -321,20 +370,16 @@ Problem 2:
 
 2. View and Interpret Your IP Routing Table
 
-- Windows:
+Windows:
 
-        Open Command Prompt
+Type:
+    
+    sh route print
+    Look for Network Destination, Netmask, Gateway, and Interface.
 
-        Type:
-        sh route print
+  Linux/Mac:
 
-        Look for Network Destination, Netmask, Gateway, and Interface.
-
-- Linux/Mac:
-
-        Open Terminal
-
-        Type:
+  Type:
         sh netstat -rn
 
     Example Output:
@@ -360,11 +405,13 @@ Problem 2:
 ## 1. TCP vs. UDP
 
     Feature	    | TCP  (Transmission Control Protocol)          | UDP (User Datagram Protocol)
+    _______________________________________________________________________________________________
     Connection	| Connection-oriented (3-way handshake)	        | Connectionless (no handshake)
     Reliability	| Reliable (acknowledgments, retransmissions)   | Unreliable (no retransmissions)
     Ordering	| In-order delivery	                            | No guaranteed order
     Speed	    | Slower (overhead)	                            | Faster (low latency)
     Use Cases	| Web (HTTP), Email (SMTP), File Transfer (FTP) | Video Streaming, VoIP, DNS, Gaming
+    ___________________________________________________________________________________________________
 
 **TCP Features:**
 
@@ -411,9 +458,11 @@ Problem 2:
         Window Size	Flow control         | (how much data receiver can accept)
         _______________________________________________________________________
 
-- UDP Datagram Structure:
+ UDP Datagram Structure:
 
-        Simpler: Source Port, Destination Port, Length, Checksum.
+  Simpler:
+
+       Source Port, Destination Port, Length, Checksum.
 
 ## 4. TCP Handshake (3-Way Handshake)
 
@@ -423,7 +472,7 @@ Problem 2:
 
     ACK → Client sends ACK (Acknowledgment).
 
-- Connection Termination (4-Way Handshake):
+Connection Termination (4-Way Handshake):
 
         FIN → One side requests closure.
     
@@ -452,7 +501,7 @@ Problem 2:
 
         RST = Abrupt reset
 
-- Example:
+ Example:
 
         Open a website in a browser and observe the SYN → SYN-ACK → ACK sequence.
 
