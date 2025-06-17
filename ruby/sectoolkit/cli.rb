@@ -50,11 +50,6 @@ module SecToolKit
       puts "Extracted to #{output_dir}"
     end
 
-    desc "password_pipeline LENGTH HASH PATH PASSWORD","generate password, hash it, store it and add optional passsword "
-    def password_pipeline(length, hash, path, password)
-      Pipeline.run_password_pipeline(length,hash ,path, password: password)
-    end
-
     desc "man", "Display full usage manual"
     def man
       puts File.read(File.expand_path("../../../man/manual.md", __FILE__))
