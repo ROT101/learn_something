@@ -49,12 +49,7 @@ module SecToolKit
       Archiver.decompress(archive, output_dir, password: password)
       puts "Extracted to #{output_dir}"
     end
-
-    desc "man", "Display full usage manual"
-    def man
-      puts File.read(File.expand_path("../../../man/manual.md", __FILE__))
-    end
-
+    
     desc "help", "Show help"
     def help(*args)
       super
