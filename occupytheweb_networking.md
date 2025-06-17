@@ -40,7 +40,7 @@
 
         Used for local network communication
 
-    IP Address:
+IP Address:
 
         Logical address
 
