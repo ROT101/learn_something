@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+DEPENDENCIES
+  puma (~> 6.0)
+  sinatra (~> 3.0)
+
+PLATFORMS
+  ruby
+
+BUNDLED WITH
+   2.4.13

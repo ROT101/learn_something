@@ -1,58 +1,24 @@
-# LEARN SOMETHING 
- 
+# learn_something — Self-hosted Ruby web starter
 
+This repository is prepared to run a small Sinatra web app with Puma and Docker.
 
-**LESSONS** \
- [linux](https://github.com/ROT101/learn_something/blob/main/occupytheweb_linux.md) \
- [networking](https://github.com/ROT101/learn_something/blob/main/occupytheweb_networking.md) \
- [regex](https://github.com/ROT101/learn_something/blob/main/skill_development/regex.md) \
- [programing]() \
- [research]() 
+Quick start (local)
+1. Install Ruby 3.2 and Bundler.
+2. bundle install
+3. bundle exec puma -C config/puma.rb
+4. Open http://localhost:4567
 
- # virtualbox installation
+Quick start (Docker)
+1. docker build -t learn_something:latest .
+2. docker run -p 4567:4567 --env RACK_ENV=production learn_something:latest
+3. Open http://SERVER_IP:4567
 
-**VirtualBox
-is a hosted hypervisor for x86 virtualization developed by Oracle Corporation. It allows users to create and run virtual machines on their computers, enabling them to install and run multiple operating systems simultaneously**
+Using docker-compose
+1. docker-compose up --build -d
+2. Visit http://SERVER_IP:4567
 
-follow the link to install virtualbox on [linux](https://www.geeksforgeeks.org/how-to-install-virtualbox-in-linux/)
-
-follow the link to install virtualbox on [windows](https://ultahost.com/knowledge-base/install-virtualbox-windows/)
-
-## VMs 
-**Virtual machines are software computers that provide the same functionality as physical computers**
-
-[kali installation docs](https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/) \
-[kali linux vm](https://www.kali.org/get-kali/#kali-virtual-machines)
-
-[parrot os isntallation doc](https://parrotsec.org/docs/virtualization/install-parrot-on-virtualbox) \
-[parrot os vm](https://www.parrotsec.org/download/)
-
-# burp suite
-**a proprietary software tool for security assessment and penetration testing of web applications**
-
- follow the link [burpsuite site](https://portswigger.net/burp) to learn more about web hacking with the help of burp.
-
-# juice shop
-**An insecure web application designed for security training, awareness demonstrations, and penetration testing. The application contains numerous hacking challenges that involve exploiting vulnerabilities, which are intentionally planted to simulate real-world security issues It is written in Node.js, Express, and Angular.**
-
-## juice shop setup 
-    sudo apt update
-    sudo apt install nodejs npm
-    git clone https://github.com/juice-shop/juice-shop.git
-    cd juice-shop 
-    npm install
-    npm start
-    firfox http://localhost:3000
-alternative 
-- [github page](https://github.com/juice-shop/juice-shop?tab=readme-ov-file#setup)
-- [documentation](https://pwning.owasp-juice.shop/companion-guide/latest/part1/running.html)
-- [youtube 1](https://www.youtube.com/watch?v=tvNKp1QXV_8)
-- [youtube 2](https://www.youtube.com/watch?v=tvNKp1QXV_8)
-
-# scripting projects 
-[bash](https://github.com/ROT101/learn_something/tree/main/bash)
-
-[ruby](https://github.com/ROT101/learn_something/tree/main/ruby)
-
-[python](https://github.com/ROT101/learn_something/tree/main/python)
-
+Production deployment suggestions
+- Reverse proxy with nginx (see `deploy/nginx/learn_something.conf`) and obtain TLS certs via certbot / Let's Encrypt.
+- Run the app in Docker or as a systemd service (see `deploy/systemd/learn_something.service`).
+- Use Postgres (external) for persistent data. Add `pg` to Gemfile and configure ENV vars for DB.
+- Set `RACK_ENV=production` and configure secrets / environment variables via your host or orchestrator.

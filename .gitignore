@@ -1,0 +1,21 @@
+# Ruby & Bundler
+/.bundle
+/log
+/tmp
+/.env
+/vendor/bundle
+*.gem
+*.rbc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Docker
+.env.local

@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, scaffold/sinatra-puma-docker ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+      - name: Run linters / tests
+        run: |
+          # Add test commands here when tests exist
+          echo "No tests configured"
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: learn_something:ci

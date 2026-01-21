@@ -1,0 +1,14 @@
+[Unit]
+Description=learn_something Puma Service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/learn_something
+Environment=RACK_ENV=production
+ExecStart=/usr/bin/bash -lc 'bundle exec puma -C config/puma.rb'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
