@@ -4,5 +4,4 @@ tmp/*
 .bundle
 vendor/bundle
 *.gem
-*.lock
 node_modules
