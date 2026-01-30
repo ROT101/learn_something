@@ -34,6 +34,16 @@ ruby '3.2.3'
 
 gem 'sinatra', '~> 3.0'
 gem 'puma', '~> 6.0'
+gem 'activerecord', '~> 7.0'          # ORM
+gem 'sinatra-activerecord', '~> 2.0'  # integration helpers (optional but handy)
+gem 'pg'                              # Postgres adapter
+gem 'bcrypt', '~> 3.1'                # secure password hashing
+gem 'redcarpet'                       # markdown rendering
+gem 'rake'                            # for migrations/tasks
+gem 'sinatra-contrib'                 # helpful helpers (sessions, etc.)
+# for tests:
+gem 'rack-test', group: :test
+gem 'minitest', group: :test
 # Add other gems here as needed (e.g., activerecord, pg, sinatra-activerecord)
 RUBY
 
@@ -435,3 +445,18 @@ echo "Next steps:"
 echo "1. Switch to the scaffold branch: git checkout scaffold/sinatra-puma-docker"
 echo "2. Test locally: ./test_app.sh"
 echo "3. Test with Docker: docker-compose up --build"
+
+# Create a migration directory
+mkdir -p db/migrate
+
+# Create a sample migration
+cat > db/migrate/001_create_example.rb <<'MIGRATION'
+class CreateExample < ActiveRecord::Migration[7.0]
+  def change
+    create_table :examples do |t|
+      t.string :name
+      t.timestamps
+    end
+  end
+end
+MIGRATION

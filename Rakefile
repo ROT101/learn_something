@@ -1,2 +1,6 @@
 require 'sinatra/activerecord/rake'
-require './app'  # or your main application file
+namespace :db do
+  task :load_config do
+    require './app'
+  end
+end
