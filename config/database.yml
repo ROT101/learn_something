@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: learn_something_development
+  username: postgres
+  password: postgres
+  host: db
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: learn_something_test
+  username: postgres
+  password: postgres
+  host: db
+  pool: 5
+  

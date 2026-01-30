@@ -8,4 +8,7 @@ preload_app!
 port        ENV.fetch('PORT', 4567)
 environment ENV.fetch('RACK_ENV', 'production')
 
+# Allow binding to 0.0.0.0 for Docker
+bind "tcp://0.0.0.0:#{ENV.fetch('PORT', 4567)}"
+
 # Optional: pidfile, stdout_redirect, etc.

@@ -14,7 +14,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2
+          ruby-version: 3.2.3
       - name: Install dependencies
         run: |
           gem install bundler
@@ -29,3 +29,10 @@ jobs:
           context: .
           push: false
           tags: learn_something:ci
+      - name: Test Docker container
+        run: |
+          docker build -t learn_something:test .
+          docker run -d -p 4567:4567 --name test-app learn_something:test
+          sleep 5
+          curl -f http://localhost:4567/health
+          docker stop test-app && docker rm test-app

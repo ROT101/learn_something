@@ -1,16 +1,14 @@
 # Multi-stage Dockerfile: build gems in a builder image, produce small runtime image
-FROM ruby:3.2.3-alpine AS builder
-RUN apk add --no-cache build-base libffi-dev bash
+FROM ruby:3.2-alpine AS builder
+RUN apk add --no-cache build-base libffi-dev bash git
 
 WORKDIR /app
 COPY Gemfile Gemfile.lock ./
+RUN bundle config set --local deployment 'true' && \
+    bundle config set --local without 'development test' && \
+    bundle install --jobs 4 --retry 3
 
-# Install bundler, configure local path for gems, then install
-RUN gem install bundler \
- && bundle config set --local path '/app/vendor/bundle' \
- && bundle install --jobs 4 --retry 3
-
-FROM ruby:3.2.3-alpine
+FROM ruby:3.2-alpine
 RUN apk add --no-cache libstdc++ libffi
 
 # Create a non-root user
@@ -18,17 +16,16 @@ RUN addgroup -S app && adduser -S -G app app
 WORKDIR /app
 
 # Copy installed gems from builder
-COPY --from=builder /app/vendor /app/vendor
+COPY --from=builder /usr/local/bundle /usr/local/bundle
+COPY --from=builder /app /app
 
-# Ensure Ruby/Bundler use the copied gems at runtime
-ENV GEM_HOME=/app/vendor/bundle
-ENV BUNDLE_PATH=/app/vendor/bundle
-ENV PATH=/app/vendor/bundle/ruby/3.2.0/bin:/app/vendor/bundle/bin:$PATH
-
-# Copy application files
+# Copy application code
 COPY . .
 
-# Run as non-root
+# Ensure proper permissions
+RUN chown -R app:app /app
+
+# Ensure puma runs as non-root
 USER app
 
 EXPOSE 4567

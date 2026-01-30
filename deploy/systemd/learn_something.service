@@ -5,10 +5,23 @@ After=network.target
 [Service]
 Type=simple
 User=www-data
+Group=www-data
 WorkingDirectory=/var/www/learn_something
 Environment=RACK_ENV=production
-ExecStart=/usr/bin/bash -lc 'bundle exec puma -C config/puma.rb'
+Environment=PORT=4567
+Environment=WEB_CONCURRENCY=2
+Environment=MAX_THREADS=5
+ExecStart=/usr/local/bin/bundle exec puma -C config/puma.rb
 Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=learn_something
+
+# Security hardening
+PrivateTmp=true
+ProtectSystem=full
+NoNewPrivileges=true
 
 [Install]
 WantedBy=multi-user.target

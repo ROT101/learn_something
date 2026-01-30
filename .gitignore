@@ -6,6 +6,9 @@
 /vendor/bundle
 *.gem
 *.rbc
+.bundle
+Gemfile.lock
+*.gem
 
 # OS
 .DS_Store
@@ -19,3 +22,7 @@ Thumbs.db
 
 # Docker
 .env.local
+.env.*.local
+
+# Logs
+*.log

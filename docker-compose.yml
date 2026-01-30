@@ -8,4 +8,12 @@ services:
     environment:
       RACK_ENV: production
       PORT: 4567
+      WEB_CONCURRENCY: 2
+      MAX_THREADS: 5
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4567/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

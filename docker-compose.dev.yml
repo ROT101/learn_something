@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "4567:4567"
+    environment:
+      RACK_ENV: development
+      PORT: 4567
+    volumes:
+      - .:/app
+      - bundle_data:/usr/local/bundle
+    command: bundle exec puma -C config/puma.rb
+
+volumes:
+  bundle_data:
