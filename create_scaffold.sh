@@ -15,7 +15,11 @@ mkdir -p deploy/nginx deploy/systemd .github/workflows config
 cat > app.rb <<'RUBY'
 # Simple Sinatra application
 require 'sinatra'
+require 'sinatra/activerecord'
 require 'json'
+
+# Configure database
+set :database, ENV['DATABASE_URL'] || 'postgresql://localhost/learn_something_development'
 
 get '/' do
   content_type :json
@@ -96,9 +100,6 @@ preload_app!
 port        ENV.fetch('PORT', 4567)
 environment ENV.fetch('RACK_ENV', 'production')
 
-# Allow binding to 0.0.0.0 for Docker
-bind "tcp://0.0.0.0:#{ENV.fetch('PORT', 4567)}"
-
 # Optional: pidfile, stdout_redirect, etc.
 PUMA
 
@@ -137,8 +138,22 @@ EXPOSE 4567
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 DOCKER
 
+# Create a migration directory
+mkdir -p db/migrate
+
+# Create a sample migration
+cat > db/migrate/001_create_example.rb <<'MIGRATION'
+class CreateExample < ActiveRecord::Migration[7.0]
+  def change
+    create_table :examples do |t|
+      t.string :name
+      t.timestamps
+    end
+  end
+end
+MIGRATION
+
 cat > docker-compose.yml <<'DC'
-version: '3.8'
 
 services:
   web:
@@ -150,18 +165,30 @@ services:
       PORT: 4567
       WEB_CONCURRENCY: 2
       MAX_THREADS: 5
+      DATABASE_URL: postgres://postgres:password@db:5432/learn_something_production
+    depends_on:
+      - db
     restart: unless-stopped
+    db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: learn_something_production
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:4567/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
+
+volumes:
+  postgres_data:  
 DC
 
 # Add a simple docker-compose for development
 cat > docker-compose.dev.yml <<'DCDEV'
-version: '3.8'
 
 services:
   web:
@@ -446,17 +473,3 @@ echo "1. Switch to the scaffold branch: git checkout scaffold/sinatra-puma-docke
 echo "2. Test locally: ./test_app.sh"
 echo "3. Test with Docker: docker-compose up --build"
 
-# Create a migration directory
-mkdir -p db/migrate
-
-# Create a sample migration
-cat > db/migrate/001_create_example.rb <<'MIGRATION'
-class CreateExample < ActiveRecord::Migration[7.0]
-  def change
-    create_table :examples do |t|
-      t.string :name
-      t.timestamps
-    end
-  end
-end
-MIGRATION
