@@ -56,3 +56,10 @@ alternative
 
 [python](https://github.com/ROT101/learn_something/tree/main/python)
 
+Contributing
+
+Please see CONTRIBUTING.md for guidelines on how to propose changes, run linters, and submit PRs.
+
+Contact
+
+If you have questions or need help, open an issue.
