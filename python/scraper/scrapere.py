@@ -37,5 +37,6 @@ df = pd.DataFrame(books)
 df.to_csv('books.csv', index=False)
 print("Data has been saved to books.csv")
 
-# Implement rate limiting
-time.sleep(2)  # Wait for 2 seconds before making the next request
+# Implement rate limiting (if scraping multiple pages)
+# time.sleep(2)  # Wait for 2 seconds before making the next request
+# Note: Rate limiting should be placed between requests when scraping multiple pages
