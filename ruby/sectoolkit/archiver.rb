@@ -1,11 +1,10 @@
 require "fileutils"
 require "zlib"
-require "archive/tar/minitar"
+require "minitar"
 require "digest"
 
 module SecToolKit
   class Archiver
-    include Archive::Tar
 
     # Compress and optionally password-protect a folder or file.
     def self.compress(input_path, output_path, password: nil)

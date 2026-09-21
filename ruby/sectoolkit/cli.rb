@@ -1,8 +1,8 @@
 require_relative 'archiver.rb'
-require_relative 'encode_decode.rb'
+require_relative 'encoder_decoder.rb'
 require_relative 'encryptor.rb'
 require_relative 'hasher.rb'
-require_relative 'permutaion_generator.rb'
+require_relative 'permutation_generator.rb'
 require_relative 'password_generator.rb'
 
 require "thor"
