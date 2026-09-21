@@ -1,34 +1,46 @@
-```
-# Data files
-*.csv
-
-# Python
-__pycache__/
+# Compiled and build artifacts
 *.pyc
-*.pyo
-*.pyd
-.Python
-env/
+__pycache__/
+*.o
+*.obj
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
+# Dependencies
+node_modules/
 venv/
 .venv/
-.ENV
-.ENV.*
-requirements.txt.bak
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
+.env
+.env.local
+.env.*
+
+# Logs and temp files
 *.log
-*.pot
-*.po
-*~
-.pytest_cache/
-.mypy_cache/
-.hypothesis/
+*.tmp
+*.swp
+*.swo
+
+# Editors
+.vscode/
+.idea/
+
+# System files
 .DS_Store
-```
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Distribution / build artifacts
+dist/
+build/
+target/
+.gradle/
+.mypy_cache/
+.pytest_cache/
